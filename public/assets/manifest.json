@@ -1,0 +1,811 @@
+{
+  "_animations.min.js": {
+    "file": "js/animations.min.js",
+    "name": "animations",
+    "css": [
+      "css/app.min2.css"
+    ]
+  },
+  "_app.min2.css": {
+    "file": "css/app.min2.css",
+    "src": "_app.min2.css"
+  },
+  "_countries-api.min.js": {
+    "file": "js/countries-api.min.js",
+    "name": "countries-api"
+  },
+  "_debounce.min.js": {
+    "file": "js/debounce.min.js",
+    "name": "debounce"
+  },
+  "_delete-factory.min.js": {
+    "file": "js/delete-factory.min.js",
+    "name": "delete-factory"
+  },
+  "_form-validator.min.js": {
+    "file": "js/form-validator.min.js",
+    "name": "form-validator"
+  },
+  "_header-search.min.js": {
+    "file": "js/header-search.min.js",
+    "name": "header-search",
+    "imports": [
+      "_spa-router.min.js"
+    ]
+  },
+  "_home-events.min.js": {
+    "file": "js/home-events.min.js",
+    "name": "home-events",
+    "imports": [
+      "_animations.min.js",
+      "_register-new-user.min.js"
+    ]
+  },
+  "_modal-detail-owner.min.js": {
+    "file": "js/modal-detail-owner.min.js",
+    "name": "modal-detail-owner"
+  },
+  "_modal-factory.min.js": {
+    "file": "js/modal-factory.min.js",
+    "name": "modal-factory"
+  },
+  "_notification-helpers.min.js": {
+    "file": "js/notification-helpers.min.js",
+    "name": "notification-helpers"
+  },
+  "_preload-helper.min.js": {
+    "file": "js/preload-helper.min.js",
+    "name": "preload-helper"
+  },
+  "_preview.min.js": {
+    "file": "js/preview.min.js",
+    "name": "preview"
+  },
+  "_regions-component.min.js": {
+    "file": "js/regions-component.min.js",
+    "name": "regions-component"
+  },
+  "_register-new-user.min.js": {
+    "file": "js/register-new-user.min.js",
+    "name": "register-new-user",
+    "imports": [
+      "_users-modal.min.js"
+    ]
+  },
+  "_search-ads.min.js": {
+    "file": "js/search-ads.min.js",
+    "name": "search-ads",
+    "imports": [
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_animations.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_debounce.min.js"
+    ]
+  },
+  "_search-listings.min.js": {
+    "file": "js/search-listings.min.js",
+    "name": "search-listings",
+    "imports": [
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_regions-component.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_animations.min.js",
+      "_toast.min.js",
+      "_modal-detail-owner.min.js",
+      "_delete-factory.min.js",
+      "_debounce.min.js"
+    ]
+  },
+  "_search-quotes.min.js": {
+    "file": "js/search-quotes.min.js",
+    "name": "search-quotes",
+    "imports": [
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_regions-component.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_animations.min.js",
+      "_modal-detail-owner.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_debounce.min.js"
+    ]
+  },
+  "_spa-router.min.js": {
+    "file": "js/spa-router.min.js",
+    "name": "spa-router"
+  },
+  "_spinner-utils.min.js": {
+    "file": "js/spinner-utils.min.js",
+    "name": "spinner-utils"
+  },
+  "_table-pagination-count.min.js": {
+    "file": "js/table-pagination-count.min.js",
+    "name": "table-pagination-count"
+  },
+  "_table-search.min.js": {
+    "file": "js/table-search.min.js",
+    "name": "table-search",
+    "imports": [
+      "_preload-helper.min.js"
+    ],
+    "dynamicImports": [
+      "resources/js/utils/faqs/faq-accordion.js"
+    ]
+  },
+  "_toast.min.js": {
+    "file": "js/toast.min.js",
+    "name": "toast"
+  },
+  "_upload-modal.min.js": {
+    "file": "js/upload-modal.min.js",
+    "name": "upload-modal",
+    "imports": [
+      "_toast.min.js"
+    ]
+  },
+  "_user-types-api.min.js": {
+    "file": "js/user-types-api.min.js",
+    "name": "user-types-api"
+  },
+  "_users-modal.min.js": {
+    "file": "js/users-modal.min.js",
+    "name": "users-modal",
+    "imports": [
+      "_modal-factory.min.js",
+      "_regions-component.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "_view-advert.min.js": {
+    "file": "js/view-advert.min.js",
+    "name": "view-advert",
+    "imports": [
+      "_view-counter.min.js",
+      "_modal-detail-owner.min.js",
+      "_preview.min.js"
+    ]
+  },
+  "_view-counter.min.js": {
+    "file": "js/view-counter.min.js",
+    "name": "view-counter",
+    "imports": [
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_preview.min.js"
+    ]
+  },
+  "_view-listing.min.js": {
+    "file": "js/view-listing.min.js",
+    "name": "view-listing",
+    "imports": [
+      "_view-counter.min.js",
+      "_modal-detail-owner.min.js",
+      "_preview.min.js",
+      "_toast.min.js"
+    ]
+  },
+  "_view-quotation.min.js": {
+    "file": "js/view-quotation.min.js",
+    "name": "view-quotation",
+    "imports": [
+      "_view-counter.min.js",
+      "_modal-detail-owner.min.js",
+      "_preview.min.js",
+      "_toast.min.js"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "css/app.min.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "js/app.min.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_spa-router.min.js",
+      "_modal-factory.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_toast.min.js",
+      "_header-search.min.js",
+      "resources/js/pages/messages-page.js",
+      "_table-pagination-count.min.js",
+      "_delete-factory.min.js",
+      "_animations.min.js"
+    ],
+    "css": [
+      "css/app.min.css"
+    ]
+  },
+  "resources/js/pages/about-page.js": {
+    "file": "js/about-page.min.js",
+    "name": "about-page",
+    "src": "resources/js/pages/about-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_register-new-user.min.js",
+      "_users-modal.min.js",
+      "_modal-factory.min.js",
+      "_regions-component.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/adverts-admin-page.js": {
+    "file": "js/adverts-admin-page.min.js",
+    "name": "adverts-admin-page",
+    "src": "resources/js/pages/adverts-admin-page.js",
+    "isEntry": true,
+    "imports": [
+      "_table-pagination-count.min.js",
+      "_table-search.min.js",
+      "_view-advert.min.js",
+      "_view-counter.min.js",
+      "_animations.min.js",
+      "_preload-helper.min.js",
+      "_modal-detail-owner.min.js",
+      "_preview.min.js",
+      "_upload-modal.min.js",
+      "_toast.min.js"
+    ]
+  },
+  "resources/js/pages/adverts-page.js": {
+    "file": "js/adverts-page.min.js",
+    "name": "adverts-page",
+    "src": "resources/js/pages/adverts-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_search-ads.min.js",
+      "_view-advert.min.js",
+      "_register-new-user.min.js",
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_debounce.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_preview.min.js",
+      "_modal-detail-owner.min.js",
+      "_users-modal.min.js",
+      "_regions-component.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/blog-posts-page.js": {
+    "file": "js/blog-posts-page.min.js",
+    "name": "blog-posts-page",
+    "src": "resources/js/pages/blog-posts-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/chats-page.js": {
+    "file": "js/chats-page.min.js",
+    "name": "chats-page",
+    "src": "resources/js/pages/chats-page.js",
+    "isEntry": true,
+    "imports": [
+      "_toast.min.js",
+      "_header-search.min.js",
+      "_upload-modal.min.js",
+      "_spa-router.min.js"
+    ]
+  },
+  "resources/js/pages/contact-page.js": {
+    "file": "js/contact-page.min.js",
+    "name": "contact-page",
+    "src": "resources/js/pages/contact-page.js",
+    "isEntry": true,
+    "imports": [
+      "_form-validator.min.js",
+      "_toast.min.js"
+    ]
+  },
+  "resources/js/pages/evaluate-landlords-page.js": {
+    "file": "js/evaluate-landlords-page.min.js",
+    "name": "evaluate-landlords-page",
+    "src": "resources/js/pages/evaluate-landlords-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/faqs-page.js": {
+    "file": "js/faqs-page.min.js",
+    "name": "faqs-page",
+    "src": "resources/js/pages/faqs-page.js",
+    "isEntry": true,
+    "imports": [
+      "_modal-factory.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_table-pagination-count.min.js",
+      "resources/js/utils/faqs/faq-accordion.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_table-search.min.js",
+      "_preload-helper.min.js"
+    ]
+  },
+  "resources/js/pages/gonachi-page.js": {
+    "file": "js/gonachi-page.min.js",
+    "name": "gonachi-page",
+    "src": "resources/js/pages/gonachi-page.js",
+    "isEntry": true,
+    "imports": [
+      "_home-events.min.js",
+      "_animations.min.js",
+      "_register-new-user.min.js",
+      "_users-modal.min.js",
+      "_modal-factory.min.js",
+      "_regions-component.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/groups-page.js": {
+    "file": "js/groups-page.min.js",
+    "name": "groups-page",
+    "src": "resources/js/pages/groups-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/history-page.js": {
+    "file": "js/history-page.min.js",
+    "name": "history-page",
+    "src": "resources/js/pages/history-page.js",
+    "isEntry": true,
+    "imports": [
+      "_table-search.min.js",
+      "_table-pagination-count.min.js",
+      "_toast.min.js",
+      "_delete-factory.min.js",
+      "_preload-helper.min.js"
+    ]
+  },
+  "resources/js/pages/home-buyers-page.js": {
+    "file": "js/home-buyers-page.min.js",
+    "name": "home-buyers-page",
+    "src": "resources/js/pages/home-buyers-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/home-page.js": {
+    "file": "js/home-page.min.js",
+    "name": "home-page",
+    "src": "resources/js/pages/home-page.js",
+    "isEntry": true,
+    "imports": [
+      "_home-events.min.js",
+      "_animations.min.js",
+      "_register-new-user.min.js",
+      "_users-modal.min.js",
+      "_modal-factory.min.js",
+      "_regions-component.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/home-sellers-page.js": {
+    "file": "js/home-sellers-page.min.js",
+    "name": "home-sellers-page",
+    "src": "resources/js/pages/home-sellers-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/listings-page.js": {
+    "file": "js/listings-page.min.js",
+    "name": "listings-page",
+    "src": "resources/js/pages/listings-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_spa-router.min.js",
+      "_search-listings.min.js",
+      "_view-listing.min.js",
+      "_register-new-user.min.js",
+      "_modal-factory.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_countries-api.min.js",
+      "_regions-component.min.js",
+      "_toast.min.js",
+      "_modal-detail-owner.min.js",
+      "_delete-factory.min.js",
+      "_debounce.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_preview.min.js",
+      "_users-modal.min.js",
+      "_user-types-api.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/mentors-page.js": {
+    "file": "js/mentors-page.min.js",
+    "name": "mentors-page",
+    "src": "resources/js/pages/mentors-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_regions-component.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_toast.min.js",
+      "_modal-detail-owner.min.js",
+      "_debounce.min.js",
+      "_delete-factory.min.js",
+      "_register-new-user.min.js",
+      "_users-modal.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/messages-page.js": {
+    "file": "js/messages-page.min.js",
+    "name": "messages-page",
+    "src": "resources/js/pages/messages-page.js",
+    "isEntry": true,
+    "imports": [
+      "_toast.min.js",
+      "_table-pagination-count.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_modal-factory.min.js",
+      "_delete-factory.min.js",
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/my-adverts-page.js": {
+    "file": "js/my-adverts-page.min.js",
+    "name": "my-adverts-page",
+    "src": "resources/js/pages/my-adverts-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_search-ads.min.js",
+      "_view-advert.min.js",
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_debounce.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_preview.min.js",
+      "_modal-detail-owner.min.js"
+    ]
+  },
+  "resources/js/pages/my-listings-page.js": {
+    "file": "js/my-listings-page.min.js",
+    "name": "my-listings-page",
+    "src": "resources/js/pages/my-listings-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_search-listings.min.js",
+      "_view-listing.min.js",
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_regions-component.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_toast.min.js",
+      "_modal-detail-owner.min.js",
+      "_delete-factory.min.js",
+      "_debounce.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_preview.min.js"
+    ]
+  },
+  "resources/js/pages/my-quotations-page.js": {
+    "file": "js/my-quotations-page.min.js",
+    "name": "my-quotations-page",
+    "src": "resources/js/pages/my-quotations-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_search-quotes.min.js",
+      "_view-quotation.min.js",
+      "_modal-factory.min.js",
+      "_countries-api.min.js",
+      "_regions-component.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_modal-detail-owner.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_debounce.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_preview.min.js"
+    ]
+  },
+  "resources/js/pages/notifications-page.js": {
+    "file": "js/notifications-page.min.js",
+    "name": "notifications-page",
+    "src": "resources/js/pages/notifications-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_preload-helper.min.js",
+      "_spa-router.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js"
+    ],
+    "dynamicImports": [
+      "resources/js/utils/notifications/adverts.js",
+      "resources/js/utils/notifications/mentors.js",
+      "resources/js/utils/notifications/system.js",
+      "resources/js/utils/notifications/quotations.js",
+      "resources/js/utils/notifications/listings.js"
+    ]
+  },
+  "resources/js/pages/profile-page.js": {
+    "file": "js/profile-page.min.js",
+    "name": "profile-page",
+    "src": "resources/js/pages/profile-page.js",
+    "isEntry": true,
+    "imports": [
+      "_users-modal.min.js",
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_spa-router.min.js",
+      "_delete-factory.min.js",
+      "_preview.min.js",
+      "_animations.min.js",
+      "_modal-factory.min.js",
+      "_regions-component.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/protect-rentals-page.js": {
+    "file": "js/protect-rentals-page.min.js",
+    "name": "protect-rentals-page",
+    "src": "resources/js/pages/protect-rentals-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/quotations-page.js": {
+    "file": "js/quotations-page.min.js",
+    "name": "quotations-page",
+    "src": "resources/js/pages/quotations-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js",
+      "_spa-router.min.js",
+      "_search-quotes.min.js",
+      "_view-quotation.min.js",
+      "_register-new-user.min.js",
+      "_modal-factory.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_countries-api.min.js",
+      "_regions-component.min.js",
+      "_modal-detail-owner.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_debounce.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_preview.min.js",
+      "_users-modal.min.js",
+      "_user-types-api.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/ratings-page.js": {
+    "file": "js/ratings-page.min.js",
+    "name": "ratings-page",
+    "src": "resources/js/pages/ratings-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/recommendations-page.js": {
+    "file": "js/recommendations-page.min.js",
+    "name": "recommendations-page",
+    "src": "resources/js/pages/recommendations-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/reset-password-page.js": {
+    "file": "js/reset-password-page.min.js",
+    "name": "reset-password-page",
+    "src": "resources/js/pages/reset-password-page.js",
+    "isEntry": true,
+    "imports": [
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_toast.min.js"
+    ]
+  },
+  "resources/js/pages/settings-page.js": {
+    "file": "js/settings-page.min.js",
+    "name": "settings-page",
+    "src": "resources/js/pages/settings-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/social-feed-page.js": {
+    "file": "js/social-feed-page.min.js",
+    "name": "social-feed-page",
+    "src": "resources/js/pages/social-feed-page.js",
+    "isEntry": true,
+    "imports": [
+      "_modal-factory.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_toast.min.js",
+      "_upload-modal.min.js",
+      "_view-advert.min.js",
+      "_register-new-user.min.js",
+      "_view-counter.min.js",
+      "_preview.min.js",
+      "_modal-detail-owner.min.js",
+      "_users-modal.min.js",
+      "_regions-component.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_table-pagination-count.min.js"
+    ]
+  },
+  "resources/js/pages/tenant-validation-page.js": {
+    "file": "js/tenant-validation-page.min.js",
+    "name": "tenant-validation-page",
+    "src": "resources/js/pages/tenant-validation-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
+  "resources/js/pages/users-page.js": {
+    "file": "js/users-page.min.js",
+    "name": "users-page",
+    "src": "resources/js/pages/users-page.js",
+    "isEntry": true,
+    "imports": [
+      "_users-modal.min.js",
+      "_table-pagination-count.min.js",
+      "_delete-factory.min.js",
+      "_toast.min.js",
+      "_table-search.min.js",
+      "_modal-factory.min.js",
+      "_regions-component.min.js",
+      "_countries-api.min.js",
+      "_user-types-api.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js",
+      "_preload-helper.min.js"
+    ]
+  },
+  "resources/js/pages/verify-account-page.js": {
+    "file": "js/verify-account-page.min.js",
+    "name": "verify-account-page",
+    "src": "resources/js/pages/verify-account-page.js",
+    "isEntry": true
+  },
+  "resources/js/utils/faqs/faq-accordion.js": {
+    "file": "js/faq-accordion.min.js",
+    "name": "faq-accordion",
+    "src": "resources/js/utils/faqs/faq-accordion.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/utils/notifications/adverts.js": {
+    "file": "js/adverts.min.js",
+    "name": "adverts",
+    "src": "resources/js/utils/notifications/adverts.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_view-advert.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_preview.min.js",
+      "_modal-detail-owner.min.js"
+    ]
+  },
+  "resources/js/utils/notifications/listings.js": {
+    "file": "js/listings.min.js",
+    "name": "listings",
+    "src": "resources/js/utils/notifications/listings.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_notification-helpers.min.js",
+      "_view-listing.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_preview.min.js",
+      "_modal-detail-owner.min.js"
+    ]
+  },
+  "resources/js/utils/notifications/mentors.js": {
+    "file": "js/mentors.min.js",
+    "name": "mentors",
+    "src": "resources/js/utils/notifications/mentors.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_notification-helpers.min.js"
+    ]
+  },
+  "resources/js/utils/notifications/quotations.js": {
+    "file": "js/quotations.min.js",
+    "name": "quotations",
+    "src": "resources/js/utils/notifications/quotations.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_notification-helpers.min.js",
+      "_view-quotation.min.js",
+      "_view-counter.min.js",
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_preview.min.js",
+      "_modal-detail-owner.min.js"
+    ]
+  },
+  "resources/js/utils/notifications/system.js": {
+    "file": "js/system.min.js",
+    "name": "system",
+    "src": "resources/js/utils/notifications/system.js",
+    "isDynamicEntry": true
+  }
+}
