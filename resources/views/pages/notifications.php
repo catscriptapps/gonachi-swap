@@ -19,10 +19,6 @@ if ($isLoggedIn) {
     // 3. Define Sidebar Filters with HeroIcons
     $filters = [
         ['All Alerts', '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />', $unreadCount],
-        ['Adverts', NotificationsController::getMetadata(Notification::TYPE_ADVERT)['icon'], $getCatCount(Notification::TYPE_ADVERT)],
-        ['Quotations', NotificationsController::getMetadata(Notification::TYPE_QUOTATION)['icon'], $getCatCount(Notification::TYPE_QUOTATION)],
-        ['Listings', NotificationsController::getMetadata(Notification::TYPE_LISTING)['icon'], $getCatCount(Notification::TYPE_LISTING)],
-        ['Mentors', NotificationsController::getMetadata(Notification::TYPE_MENTOR)['icon'], $getCatCount(Notification::TYPE_MENTOR)],
         ['System', NotificationsController::getMetadata(Notification::TYPE_SYSTEM)['icon'], $getCatCount(Notification::TYPE_SYSTEM)],
     ];
 
@@ -144,23 +140,6 @@ if ($isLoggedIn) {
                                                 data-context-info="<?= htmlspecialchars($note->context_info ?? '') ?>"
                                                 data-target-user-type="<?= htmlspecialchars($note->target_user_type ?? '') ?>"
                                                 data-receiver-name="<?= htmlspecialchars($note->receiver_full_name ?? 'You') ?>"
-
-                                                <?php if (!empty($note->quote_attrs)): ?>
-                                                <?php foreach ($note->quote_attrs as $attr => $val): ?>
-                                                data-<?= $attr ?>="<?= htmlspecialchars((string)$val) ?>"
-                                                <?php endforeach; ?>
-
-                                                <?php elseif (!empty($note->listing_attrs)): ?>
-                                                <?php foreach ($note->listing_attrs as $attr => $val): ?>
-                                                data-<?= $attr ?>="<?= htmlspecialchars((string)$val) ?>"
-                                                <?php endforeach; ?>
-
-                                                <?php elseif (!empty($note->advert_attrs)): ?>
-                                                <?php foreach ($note->advert_attrs as $attr => $val): ?>
-                                                data-<?= $attr ?>="<?= htmlspecialchars((string)$val) ?>"
-                                                <?php endforeach; ?>
-
-                                                <?php endif; ?>
                                                 class=" px-5 py-2.5 bg-secondary-900 dark:bg-secondary-700 text-white text-[10px] font-black uppercase rounded-xl hover:bg-black dark:hover:bg-secondary-900 transition-all">View Details
                                             </button>
 
