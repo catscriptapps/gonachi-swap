@@ -26,48 +26,6 @@ function json_response(array $data, int $code = 200): void
 function log_api_call(string $path, int $status, string $method, ?string $error = null): void {}
 
 /**
- * Retrieves the human-readable country names for a given advert's selected country IDs.
- *
- * This function checks if the advert has "ALL" selected, in which case it returns ["ALL"].
- * Otherwise, it queries the Country model to get the names of the selected countries based on their IDs.
- *
- * @param object $ad An advert object that contains a `selected_countries` property (array of country IDs).
- * @return array An array of country names corresponding to the selected country IDs, or ["ALL"] if all countries are selected.
- */
-function getAdvertCountryNames($ad)
-{
-    $countries = $ad->selected_countries ?? [];
-    if (in_array('ALL', (array)$countries)) {
-        return ['ALL'];
-    } else {
-        return Country::whereIn('id', (array)$countries)
-            ->pluck('country')
-            ->toArray();
-    }
-}
-
-/**
- * Retrieves the human-readable user type names for a given advert's selected user type IDs.
- *
- * This function checks if the advert has "ALL" selected, in which case it returns ["ALL"].
- * Otherwise, it queries the UserType model to get the names of the selected user types based on their IDs.
- *
- * @param object $ad An advert object that contains a `selected_user_types` property (array of user type IDs).
- * @return array An array of user type names corresponding to the selected user type IDs, or ["ALL"] if all user types are selected.
- */
-function getAdvertUserTypeNames($ad)
-{
-    $userTypes = $ad->selected_user_types ?? [];
-    if (in_array('ALL', (array)$userTypes)) {
-        return ['ALL'];
-    } else {
-        return UserType::whereIn('user_type_id', (array)$userTypes)
-            ->pluck('user_type')
-            ->toArray();
-    }
-}
-
-/**
  * Returns the asset base for either DEV or PRODUCTION.
  */
 function getAssetBase()

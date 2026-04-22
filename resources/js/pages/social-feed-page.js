@@ -11,7 +11,6 @@ import { loadFollowSuggestions } from '../utils/social-feed/suggestions.js';
 import { initFollowActions } from '../utils/social-feed/follow-actions.js'; 
 import { initRelationshipLists } from '../utils/social-feed/relationship-lists.js';
 import { initUserSearch } from '../utils/social-feed/user-search.js';
-import { initViewAdvert } from '../utils/adverts/view-advert.js'; 
 import { initRegisterNewUser } from '../utils/home/register-new-user.js';
 
 /**
@@ -30,7 +29,6 @@ export function init() {
     loadFollowSuggestions();
     initFollowActions();
     initUserSearch();
-    initViewAdvert();
     initRegisterNewUser();
 
     // Creation form listeners

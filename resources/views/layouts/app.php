@@ -62,14 +62,9 @@ declare(strict_types=1);
         </main>
 
         <?php
-        // The Modals for viewing listings, quotations, adverts, and notifications are included globally here to ensure they are available on all pages without needing to include them in each individual page file.
+        // The Modals for viewing are included globally here to ensure they are available on all pages without needing to include them in each individual page file.
         include __DIR__ . '/../partials/image-preview-modal.php';
         include __DIR__ . '/../partials/search-modal.php';
-        include __DIR__ . '/../components/adverts/view-advert-modal.php';
-        include __DIR__ . '/../components/quotations/view-quotation-modal.php';
-        include __DIR__ . '/../components/mentors/view-mentor-modal.php';
-        include __DIR__ . '/../components/listings/view-listing-modal.php';
-
         include __DIR__ . '/../partials/layout-footer.php';
         ?>
     </div>

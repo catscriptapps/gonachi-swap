@@ -5,11 +5,7 @@ import { loadPartial } from '../spa-router.js';
 export const NotificationRouter = {
     
     handlers: {
-        'ADVERT':       () => import('./adverts.js'),
-        'MENTOR':       () => import('./mentors.js'),
         'SYSTEM':       () => import('./system.js'),
-        'QUOTATION':    () => import('./quotations.js'),   // Added Quotation handler 📄
-        'LISTING':      () => import('./listings.js'), // Added Listing handler 🏷️
     },
 
     async handle(type, data) {
@@ -26,13 +22,9 @@ export const NotificationRouter = {
                 const module = await getHandler();
                 
                 // 2. Resolve handler dynamically 🧠
-                // Checks for AdvertHandler, MentorHandler, SystemHandler, QuotationHandler, ListingHandler, or default
+                // Checks for Handlers, or default
                 const handler = 
-                    module.AdvertHandler || 
-                    module.MentorHandler || 
                     module.SystemHandler || 
-                    module.QuotationHandler || 
-                    module.ListingHandler || 
                     module.default;
                 
                 if (handler && typeof handler.process === 'function') {
