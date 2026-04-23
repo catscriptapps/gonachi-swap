@@ -4,38 +4,36 @@
 use Src\Service\AuthService;
 ?>
 
-<header class="sticky top-0 z-40 flex h-20 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white/80 backdrop-blur-md px-4 shadow-sm sm:gap-x-6 sm:px-8 dark:bg-gray-900/80 dark:border-gray-800 transition-all duration-300">
+<header class="sticky top-0 z-40 flex h-20 shrink-0 items-center justify-between gap-x-4 border-b border-gray-200 bg-white/80 backdrop-blur-md px-4 shadow-sm sm:gap-x-6 sm:px-8 dark:bg-gray-900/80 dark:border-gray-800 transition-all duration-300">
 
-    <button @click="mobileMenuOpen = true" type="button" class="-m-2.5 p-2.5 text-secondary-700 lg:hidden dark:text-gray-200">
-        <span class="sr-only">Open sidebar</span>
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-    </button>
+    <div class="flex items-center gap-x-4">
+        <button @click="mobileMenuOpen = true" type="button" class="-m-2.5 p-2.5 text-secondary-700 lg:hidden dark:text-gray-200">
+            <span class="sr-only">Open sidebar</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
 
-    <div class="flex flex-1 items-center">
-        <div class="relative w-full max-w-md group cursor-pointer" id="search-trigger">
+        <div class="flex items-center">
+            <a href="<?= $baseUrl ?>" class="block sm:hidden">
+                <img class="h-10 w-10 object-contain" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
+            </a>
 
-            <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                <svg class="w-5 h-5 text-gray-400 group-hover:text-primary-400 transition-colors duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-            </div>
-
-            <input type="text"
-                readonly
-                placeholder="Search..."
-                class="block w-full py-3 pl-12 pr-4 text-sm text-secondary-900 border border-gray-200 rounded-2xl bg-gray-50/50 cursor-pointer focus:outline-none dark:bg-secondary-900/50 dark:border-secondary-800 dark:text-white dark:placeholder-gray-400 group-hover:border-primary-400 group-hover:bg-white dark:group-hover:bg-secondary-800 transition-all duration-300 shadow-inner group-hover:shadow-md">
-
-            <div class="hidden md:flex absolute inset-y-0 right-0 items-center pr-3 pointer-events-none">
-                <kbd class="px-2 py-1 text-[10px] font-semibold text-gray-500 bg-white border border-gray-200 rounded-lg dark:bg-secondary-800 dark:border-secondary-700 dark:text-gray-400">
-                    ⌘K
-                </kbd>
-            </div>
+            <h1 class="hidden sm:block text-xl font-black tracking-tighter text-secondary-900 dark:text-white uppercase">
+                <?= $appName ?>
+            </h1>
         </div>
     </div>
 
     <div class="flex items-center gap-x-2 lg:gap-x-3">
+
+        <button id="search-trigger" aria-label="Search" data-tooltip="Search (⌘K)"
+            class="group p-3 rounded-2xl bg-white dark:bg-secondary-900 border border-secondary-100 dark:border-secondary-800 hover:border-primary-400 transition-all duration-300 shadow-sm text-secondary-400">
+            <svg class="w-6 h-6 group-hover:scale-110 group-hover:text-primary-500 transition-all duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+        </button>
+
         <?php if ($isLoggedIn) : ?>
 
             <?php if (AuthService::isCat()) : ?>

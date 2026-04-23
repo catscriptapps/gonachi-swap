@@ -79,15 +79,20 @@ if ($isLoggedIn && isset($currentUser)) {
         x-transition:leave-end="-translate-x-full">
 
         <div class="flex items-center justify-between px-6 h-32 shrink-0 border-b dark:border-gray-800">
-            <div class="flex-1 flex justify-center">
-                <a href="<?= $baseUrl ?>" class="flex items-center">
-                    <div class="h-20 w-20 rounded-full overflow-hidden p-1">
-                        <img class="h-full w-full rounded-full object-cover block dark:hidden" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
-                        <img class="h-full w-full rounded-full object-cover hidden dark:block" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
+            <div class="flex flex-col items-center gap-y-2">
+                <a href="<?= $baseUrl ?>" class="flex items-center gap-x-3">
+                    <div class="h-16 w-16 rounded-full overflow-hidden p-1 bg-gray-50 dark:bg-gray-800">
+                        <img class="h-full w-full object-contain" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-black tracking-tighter text-secondary-900 dark:text-white uppercase leading-none">
+                            <?= $appName ?>
+                        </span>
+                        <span class="text-[10px] font-bold text-primary-400 uppercase tracking-widest mt-1">Menu</span>
                     </div>
                 </a>
             </div>
-            <button @click="mobileMenuOpen = false" class="p-2 text-gray-400 hover:text-primary-400">
+            <button @click="mobileMenuOpen = false" class="p-2 text-gray-400 hover:text-primary-400 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
