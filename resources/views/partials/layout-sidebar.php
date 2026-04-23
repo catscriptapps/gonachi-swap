@@ -81,9 +81,9 @@ if ($isLoggedIn && isset($currentUser)) {
         <div class="flex items-center justify-between px-6 h-32 shrink-0 border-b dark:border-gray-800">
             <div class="flex-1 flex justify-center">
                 <a href="<?= $baseUrl ?>" class="flex items-center">
-                    <div class="h-20 w-20 rounded-full overflow-hidden border-2 border-primary-400 p-1 bg-white dark:bg-gray-800">
-                        <img class="h-full w-full rounded-full object-cover block dark:hidden" src="<?= $assetBase ?>images/logo/logo-compact-light.png" alt="Logo">
-                        <img class="h-full w-full rounded-full object-cover hidden dark:block" src="<?= $assetBase ?>images/logo/logo-compact-dark.png" alt="Logo">
+                    <div class="h-20 w-20 rounded-full overflow-hidden p-1">
+                        <img class="h-full w-full rounded-full object-cover block dark:hidden" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
+                        <img class="h-full w-full rounded-full object-cover hidden dark:block" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
                     </div>
                 </a>
             </div>
@@ -148,15 +148,15 @@ if ($isLoggedIn && isset($currentUser)) {
             <div class="flex-1 flex justify-center items-center">
                 <a href="<?= $baseUrl ?>" class="flex items-center justify-center group">
                     <div x-show="$store.sidebar.expanded" x-transition.opacity class="flex justify-center">
-                        <div class="h-32 w-32 rounded-full overflow-hidden border-4 border-primary-400 shadow-2xl transition-transform group-hover:scale-105 duration-300 bg-white dark:bg-gray-800 p-1">
-                            <img class="h-full w-full rounded-full object-cover block dark:hidden" src="<?= $assetBase ?>images/logo/logo-light.png" alt="Logo">
-                            <img class="h-full w-full rounded-full object-cover hidden dark:block" src="<?= $assetBase ?>images/logo/logo-dark.png" alt="Logo">
+                        <div class="h-32 w-32 rounded-full overflow-hidden transition-transform group-hover:scale-105 duration-300 p-1">
+                            <img class="h-full w-full rounded-full object-cover block dark:hidden" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
+                            <img class="h-full w-full rounded-full object-cover hidden dark:block" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
                         </div>
                     </div>
                     <div x-show="!$store.sidebar.expanded" x-transition.opacity x-cloak class="flex justify-center">
-                        <div class="h-16 w-16 rounded-full overflow-hidden border-2 border-primary-400 shadow-xl transition-all group-hover:scale-110 bg-white dark:bg-gray-800 p-0.5">
-                            <img class="h-full w-full rounded-full object-cover block dark:hidden" src="<?= $assetBase ?>images/logo/logo-compact-light.png" alt="Icon">
-                            <img class="h-full w-full rounded-full object-cover hidden dark:block" src="<?= $assetBase ?>images/logo/logo-compact-dark.png" alt="Icon">
+                        <div class="h-16 w-16 rounded-full overflow-hidden transition-all group-hover:scale-110 p-0.5">
+                            <img class="h-full w-full rounded-full object-cover block dark:hidden" src="<?= $assetBase ?>images/logo/logo.svg" alt="Icon">
+                            <img class="h-full w-full rounded-full object-cover hidden dark:block" src="<?= $assetBase ?>images/logo/logo.svg" alt="Icon">
                         </div>
                     </div>
                 </a>
