@@ -7,7 +7,7 @@
         <div class="flex flex-col md:flex-row items-center justify-between gap-6">
 
             <div class="flex items-center space-x-3">
-                <img class="h-8 w-8 grayscale opacity-80 dark:invert" src="<?= $assetBase ?>images/logo/favicon.png" alt="Favicon">
+                <img class="h-8 w-8 grayscale opacity-80 dark:invert" src="<?= $assetBase ?>images/logo/logo.svg" alt="Favicon">
                 <div class="flex flex-col md:flex-row md:items-center md:gap-x-2">
                     <span class="font-bold text-gray-900 dark:text-white tracking-tight"><?= htmlspecialchars($appName) ?></span>
                     <span class="text-sm text-gray-500 dark:text-gray-400">

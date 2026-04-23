@@ -21,7 +21,7 @@ declare(strict_types=1);
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="icon" type="image/x-icon" href="<?= $assetBase ?>images/logo/favicon.png">
+    <link rel="icon" type="image/x-icon" href="<?= $assetBase ?>images/logo/logo.svg">
 
     <script>
         window.APP_CONFIG = {

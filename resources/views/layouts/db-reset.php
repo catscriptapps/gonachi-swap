@@ -23,7 +23,7 @@ $isLoggedIn = false; // We force this for the reset screen
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="<?= $assetBase ?>images/logo/favicon.png">
+    <link rel="icon" type="image/x-icon" href="<?= $assetBase ?>images/logo/logo.svg">
 
     <script>
         window.APP_CONFIG = {
@@ -45,7 +45,7 @@ $isLoggedIn = false; // We force this for the reset screen
         <header class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white/80 backdrop-blur-md px-4 shadow-sm sm:gap-x-6 sm:px-8 dark:bg-gray-900/80 dark:border-gray-800 transition-colors duration-300">
             <div class="flex flex-1 items-center gap-x-3">
                 <a href="<?= $baseUrl ?>" class="lg:hidden flex items-center">
-                    <img class="h-8 w-8 rounded-lg shadow-sm" src="<?= $assetBase ?>images/logo/favicon.png" alt="Logo">
+                    <img class="h-8 w-8 rounded-lg shadow-sm" src="<?= $assetBase ?>images/logo/logo.svg" alt="Logo">
                 </a>
 
                 <div class="hidden sm:flex items-center">

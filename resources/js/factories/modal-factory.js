@@ -74,7 +74,7 @@ export class Modal {
         </div>`
         : '';
 
-    const logo = `<img src="${window.APP_CONFIG.assetBase}images/logo/favicon.png" alt="" class="h-10 w-10 mr-2" />`;
+    const logo = `<img src="${window.APP_CONFIG.assetBase}images/logo/logo.svg" alt="" class="h-10 w-10 mr-2" />`;
 
     // Build main modal + overlay HTML
     const modalHtml = `
