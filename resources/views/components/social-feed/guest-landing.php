@@ -9,24 +9,24 @@
     <div class="max-w-4xl w-full text-center space-y-8 animate-in fade-in zoom-in-95 duration-1000">
         <div class="inline-flex items-center justify-center p-4 rounded-3xl bg-gradient-to-tr from-primary-500 to-secondary-500 shadow-2xl shadow-primary-500/20 mb-4 rotate-3 hover:rotate-0 transition-transform duration-500">
             <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
             </svg>
         </div>
 
         <div class="space-y-4">
             <h1 class="text-5xl md:text-7xl font-black text-secondary-900 dark:text-white tracking-tight leading-none">
-                The Inner Circle <br />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">of Professionals.</span>
+                The New Era of <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">Asset Exchange.</span>
             </h1>
             <p class="max-w-xl mx-auto text-lg text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
-                Join the conversation. Share insights, stay updated with colleagues, and grow your network within our exclusive community feed.
+                Unlock the market. Swap properties, trade high-value services, and negotiate directly with verified owners in the Gonachi Swap ecosystem.
             </p>
         </div>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <a href="<?= $baseUrl ?>login" data-login-button
                 class="group relative inline-flex items-center justify-center px-8 py-4 font-black text-white transition-all duration-200 bg-secondary-900 dark:bg-primary-500 font-sans rounded-2xl hover:bg-secondary-800 dark:hover:bg-primary-600 active:scale-95 shadow-xl shadow-secondary-500/10">
-                <span class="mr-3">Sign in to Access Feed</span>
+                <span class="mr-3">Sign in to Start Swapping</span>
                 <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -47,16 +47,16 @@
 
         <div class="grid grid-cols-3 gap-8 pt-12 border-t border-gray-100 dark:border-white/5 max-w-2xl mx-auto">
             <div>
-                <div class="text-2xl font-black text-secondary-900 dark:text-white">5k+</div>
-                <div class="text-xs uppercase tracking-widest font-bold text-gray-400">Members</div>
+                <div class="text-2xl font-black text-secondary-900 dark:text-white">$42M+</div>
+                <div class="text-xs uppercase tracking-widest font-bold text-gray-400">Asset Value</div>
             </div>
             <div>
-                <div class="text-2xl font-black text-secondary-900 dark:text-white">12k</div>
-                <div class="text-xs uppercase tracking-widest font-bold text-gray-400">Daily Posts</div>
+                <div class="text-2xl font-black text-secondary-900 dark:text-white">1.2k</div>
+                <div class="text-xs uppercase tracking-widest font-bold text-gray-400">Active Swaps</div>
             </div>
             <div>
-                <div class="text-2xl font-black text-secondary-900 dark:text-white">100%</div>
-                <div class="text-xs uppercase tracking-widest font-bold text-gray-400">Verified</div>
+                <div class="text-2xl font-black text-secondary-900 dark:text-white">Instant</div>
+                <div class="text-xs uppercase tracking-widest font-bold text-gray-400">Matching</div>
             </div>
         </div>
     </div>

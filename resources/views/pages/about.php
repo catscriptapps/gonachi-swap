@@ -1,5 +1,6 @@
 <?php
-// /resources/views/pages/about.php
+// /resources/views/pages/swap.php
+
 declare(strict_types=1);
 ?>
 
@@ -10,15 +11,15 @@ declare(strict_types=1);
 
         <div class="relative" data-aos="zoom-out" data-aos-duration="1200">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-primary-100 dark:border-primary-800 animate-soft-pulse">
-                The Gonachi Story
+                Revolutionary Exchange
             </div>
             <h1 class="text-6xl lg:text-8xl font-black text-secondary-900 dark:text-white tracking-tighter mb-8 leading-[0.9]">
-                Built for the <br />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">Ecosystem.</span>
+                Trade. Barter. <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">Gonachi Swap.</span>
             </h1>
 
             <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed font-medium mb-12">
-                Gonachi Real Estate World is a comprehensive global platform designed to simplify property activities and promote a seamless exchange of services between all stakeholders.
+                The ultimate marketplace for the Gonachi ecosystem. Swap properties, assets, and high-value services through a secure, decentralized framework designed for the modern stakeholder.
             </p>
 
             <div class="w-1 h-24 bg-gradient-to-b from-primary-500 to-transparent mx-auto rounded-full animate-grow-y"></div>
@@ -29,43 +30,42 @@ declare(strict_types=1);
         <div class="relative group p-12 rounded-[3rem] bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-right">
             <div class="w-16 h-16 bg-primary-400 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary-400/30 group-hover:rotate-12 transition-transform">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
             </div>
-            <h3 class="text-4xl font-black text-secondary-900 dark:text-white mb-6">The Mission</h3>
+            <h3 class="text-4xl font-black text-secondary-900 dark:text-white mb-6">Zero Friction</h3>
             <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                To provide a one-stop-shop that caters to the diverse needs of landlords, contractors, agents, and tenants. We are committed to building a platform rooted in transparency, reliability, and trust.
+                Traditional liquidations take months. Gonachi Swap enables instant asset matching, allowing you to move from one investment to the next without the standard market delays.
             </p>
         </div>
 
         <div class="relative group p-12 rounded-[3rem] bg-secondary-900 text-white shadow-2xl border border-secondary-800 hover:-translate-y-2 transition-all duration-500" data-aos="fade-left">
             <div class="w-16 h-16 bg-white text-secondary-900 rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:-rotate-12 transition-transform">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
             </div>
-            <h3 class="text-4xl font-black text-primary-400 mb-6">The Vision</h3>
+            <h3 class="text-4xl font-black text-primary-400 mb-6">Secured Escrow</h3>
             <p class="text-lg text-secondary-100/80 leading-relaxed font-medium">
-                To create a global real estate and social media hybrid that connects the industry across borders, making it easy for professionals and users to collaborate and grow their businesses.
+                Every swap is backed by our internal verification system. We hold the trust so you can focus on the trade. Reliability isn't a feature; it's our foundation.
             </p>
         </div>
     </section>
 
     <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-xs font-black uppercase tracking-[0.5em] text-primary-500 mb-4">Deep Ecosystem Features</h2>
+        <h2 class="text-xs font-black uppercase tracking-[0.5em] text-primary-500 mb-4">Swap Mechanics</h2>
         <div class="h-1 w-20 bg-secondary-900 dark:bg-white mx-auto"></div>
     </div>
 
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-40">
         <?php
         $features = [
-            ['Rating & Recommendations', 'Make informed decisions with user-driven insights and a reliable peer-recommendation engine.', 'primary', 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.482-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z'],
-            ['Contractor Quotations', 'Request quotes and view ratings for contractors directly. Transparent bidding at its best.', 'secondary', 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'],
-            ['Tenant & Landlord Validation', 'Validate potential tenants and reference previous landlords to protect your rental portfolio.', 'primary', 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'],
-            ['Mentoring System', 'Experienced industry veterans guiding new professionals. Knowledge sharing built-in.', 'secondary', 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'],
-            ['Home Matching (AI)', 'Dedicated systems for buyers and sellers with AI-driven preference matching and media uploads.', 'primary', 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'],
-            ['Social Network & Groups', 'Connect, follow, and join specialized groups like "My Tenants" or "My Agents" on our live feed.', 'secondary', 'M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z']
+            ['Smart Matching', 'Our algorithm finds the perfect trade partner based on your asset value and location preferences.', 'primary', 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'],
+            ['Direct Messaging', 'Negotiate terms directly with other owners via our encrypted, real-time swap-chat interface.', 'secondary', 'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z'],
+            ['Valuation AI', 'Instantly receive a fair market estimate for your asset to ensure every swap is equitable.', 'primary', 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 012 2h2a2 2 0 012-2'],
+            ['Proof of Ownership', 'Integrated document verification ensures all listed assets are legitimate and trade-ready.', 'secondary', 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'],
+            ['Multi-Asset Swaps', 'Trade a combination of assets or services for a single high-value property. Total flexibility.', 'primary', 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10'],
+            ['History Tracker', 'Maintain a perfect ledger of all previous trades to build your reputation in the Swap network.', 'secondary', 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z']
         ];
         foreach ($features as $index => $f): ?>
             <div data-aos="fade-up" data-aos-delay="<?= $index * 100 ?>" class="p-10 rounded-[2.5rem] bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-primary-400 transition-all duration-500 group">
@@ -80,102 +80,25 @@ declare(strict_types=1);
         <?php endforeach; ?>
     </section>
 
-    <section class="mb-40 py-24 bg-secondary-950 rounded-[4rem] relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-
-        <div class="relative z-10 px-10">
-            <h2 class="text-4xl lg:text-6xl font-black text-white text-center mb-20" data-aos="fade-down">
-                Tailored for <span class="text-primary-400">Everyone.</span>
-            </h2>
-
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="space-y-12" data-aos="fade-right">
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center font-black text-white group-hover:animate-bounce">L</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">For Landlords</h4>
-                            <p class="text-secondary-300">Advertise properties, manage tenant validations, and connect with contractors for property maintenance in one dashboard.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center font-black text-white group-hover:animate-bounce">A</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">For Agents & Brokers</h4>
-                            <p class="text-secondary-300">Access a global directory of clients and properties. Reach buyers and sellers within your specific city or province instantly.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="space-y-12" data-aos="fade-left">
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center font-black text-white group-hover:animate-bounce">T</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">For Tenants</h4>
-                            <p class="text-secondary-300">Simple search tools and intuitive communication. Evaluate your current or previous landlords to help the community.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center font-black text-white group-hover:animate-bounce">C</div>
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">For Contractors</h4>
-                            <p class="text-secondary-300">Receive service requests from a wide range of customers within your specified location. Build your reputation via ratings.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mb-40" data-aos="zoom-in-up">
-        <div class="bg-gradient-to-br from-primary-400 to-primary-600 rounded-[3rem] p-1 lg:p-2 shadow-2xl">
-            <div class="bg-white dark:bg-gray-900 rounded-[2.8rem] p-12 lg:p-20 flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2">
-                    <div class="inline-block px-4 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-black text-xs uppercase tracking-widest mb-6">Cutting Edge Tech</div>
-                    <h2 class="text-4xl lg:text-6xl font-black text-secondary-900 dark:text-white mb-8">Your All-in-One <br><span class="text-primary-500">AI Assistant.</span></h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                        Imagine having a knowledgeable companion at your fingertips. Our AI chatbot understands your needs and provides tailored recommendations to streamline your journey through the Gonachi ecosystem.
-                    </p>
-                    <div class="flex items-center gap-4 text-secondary-900 dark:text-white font-black italic underline decoration-primary-400">
-                        Always ready. Always learning.
-                    </div>
-                </div>
-                <div class="lg:w-1/2 relative">
-                    <div class="aspect-square rounded-full bg-primary-400/20 absolute inset-0 animate-pulse"></div>
-                    <div class="relative bg-secondary-900 rounded-[2rem] p-8 shadow-2xl border-4 border-white dark:border-gray-800 rotate-3 group-hover:rotate-0 transition-transform duration-500">
-                        <div class="space-y-4">
-                            <div class="h-4 w-3/4 bg-white/20 rounded-full animate-pulse"></div>
-                            <div class="h-4 w-1/2 bg-white/10 rounded-full"></div>
-                            <div class="h-20 w-full bg-primary-400/20 rounded-2xl border border-primary-400/30 flex items-center justify-center text-primary-400 font-black">
-                                AI PROCESSING...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="text-center pb-20" data-aos="flip-up">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-5xl lg:text-7xl font-black text-secondary-900 dark:text-white mb-8 tracking-tighter">
-                Start your <span class="text-primary-500 italic">growth.</span>
+                Ready to <span class="text-primary-500 italic">Swap?</span>
             </h2>
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-12">
-                Join the global community today and experience the power of a truly connected property ecosystem.
+                List your first asset today and discover the power of the Gonachi exchange ecosystem.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a href="javascript:"
-                    class="register-btn inline-flex items-center justify-center w-full sm:w-auto px-12 py-6 bg-secondary-900 dark:bg-white text-white dark:text-secondary-900 text-xl font-black rounded-2xl hover:bg-primary-500 dark:hover:bg-primary-500 dark:hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-2xl">
-                    Join Us Today
+                <a href="<?= $baseUrl ?>swap/create"
+                    class="inline-flex items-center justify-center w-full sm:w-auto px-12 py-6 bg-secondary-900 dark:bg-white text-white dark:text-secondary-900 text-xl font-black rounded-2xl hover:bg-primary-500 dark:hover:bg-primary-500 dark:hover:text-white hover:-translate-y-2 transition-all duration-300 shadow-2xl">
+                    Create a Listing
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                        <circle cx="9" cy="7" r="4" />
-                        <line x1="19" y1="8" x2="19" y2="14" />
-                        <line x1="16" y1="11" x2="22" y2="11" />
+                        stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg>
                 </a>
-                <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">— The Gonachi Team</p>
+                <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">— The Swap Protocol</p>
             </div>
         </div>
     </section>
