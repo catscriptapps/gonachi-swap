@@ -63,9 +63,10 @@ declare(strict_types=1);
                     <?php
                     $slides = [
                         ['title' => 'Direct Swaps', 'text' => 'Trade your laptop for a console instantly.', 'img' => '1.webp'],
-                        ['title' => 'Sell for Cash', 'text' => 'List items for sale at your own price.', 'img' => '2.svg'],
-                        ['title' => 'Give for Free', 'text' => 'Declutter by gifting items to neighbors.', 'img' => 'free.jpg'],
-                        ['title' => 'Safe Meetings', 'text' => 'Connect via proximity-based secure matching.', 'img' => 'safe.jpg'],
+                        ['title' => 'Sell for Cash', 'text' => 'List items for sale at your own price.', 'img' => '2.jpg'],
+                        ['title' => 'Give for Free', 'text' => 'Declutter by gifting items to neighbors.', 'img' => '3.jpg'],
+                        ['title' => 'Safe Meetings', 'text' => 'Connect via proximity-based secure matching.', 'img' => '4.jpg'],
+                        ['title' => 'Social Feed', 'text' => 'Stay up to date with your listings.', 'img' => '5.jpg'],
                     ];
 
                     foreach ($slides as $slide): ?>
