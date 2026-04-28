@@ -25,7 +25,7 @@ declare(strict_types=1);
                     The Barter Economy — V1.0
                 </div>
 
-                <h1 class="text-5xl lg:text-7xl font-black text-secondary-900 dark:text-white leading-[0.95] tracking-tighter mb-6">
+                <h1 class="text-4xl lg:text-6xl font-black text-secondary-900 dark:text-white leading-[0.95] tracking-tighter mb-6">
                     Don't Throw It. <br />
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-orange-400 to-primary-600 animate-gradient-x">
                         Swap It.
@@ -95,7 +95,7 @@ declare(strict_types=1);
         </div>
     </section>
 
-    <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20 py-8 px-6 bg-gray-50/50 dark:bg-white/5 rounded-3xl border border-gray-100 dark:border-white/10" data-aos="fade-up">
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20 py-8 px-6 bg-gray-100 dark:bg-white/5 rounded-3xl border border-gray-300 dark:border-white/10" data-aos="fade-up">
         <?php
         $stats = [['Location', 'Proximity', 'primary'], ['Verified', 'Swappers', 'secondary'], ['Zero', 'Fees', 'primary'], ['Instant', 'Chat', 'secondary']];
         foreach ($stats as $stat): ?>
@@ -110,9 +110,24 @@ declare(strict_types=1);
         <?php endforeach; ?>
     </section>
 
+    <section class="my-20" data-aos="zoom-in">
+        <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-white/10">
+            <div class="aspect-video">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/0k49DSqCnk0"
+                    title="Gonachi Swap Overview"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
     <div class="mb-10 flex items-center gap-6" data-aos="fade-up">
         <h2 class="text-2xl font-black text-secondary-900 dark:text-white uppercase tracking-tighter">Swap Ecosystem</h2>
-        <div class="flex-1 h-px bg-gray-100 dark:bg-white/10"></div>
+        <div class="flex-1 h-px bg-gray-200 dark:bg-white/10"></div>
     </div>
 
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
