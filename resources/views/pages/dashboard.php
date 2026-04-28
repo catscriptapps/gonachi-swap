@@ -1,5 +1,6 @@
 <?php
 // /resources/views/pages/dashboard.php
+
 declare(strict_types=1);
 
 use Src\Config\NavigationConfig;

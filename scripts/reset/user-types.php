@@ -34,13 +34,7 @@ function resetUserTypesTable(): array
         // Seed data with professional formatting (No underscores!)
         $defaultTypes = [
             ['user_type_id' => 1, 'user_type' => 'Admin'],
-            ['user_type_id' => 2, 'user_type' => 'Landlord'],
-            ['user_type_id' => 3, 'user_type' => 'Tenant'],
-            ['user_type_id' => 4, 'user_type' => 'Property Manager'],
-            ['user_type_id' => 5, 'user_type' => 'Real Estate Agent'],
-            ['user_type_id' => 6, 'user_type' => 'Contractor'],
-            ['user_type_id' => 7, 'user_type' => 'Mortgage Broker'],
-            ['user_type_id' => 8, 'user_type' => 'User'],
+            ['user_type_id' => 2, 'user_type' => 'User'],
         ];
 
         foreach ($defaultTypes as $type) {

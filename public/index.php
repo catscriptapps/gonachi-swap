@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Project:         Tracker Application for Gonachi - Real Estate World
+ * Project:         Tracker Application for Gonachi Swap
  * Platform:        CatScript-13
  * Version:         1.1.0
  * Client:          Chigozie (Cat) Nduanya
  * Author:          Chigozie (Cat) Nduanya
- * Date-Created:    2026-01-29
+ * Date-Created:    2026-04-20
  */
 
 // /public/index.php
