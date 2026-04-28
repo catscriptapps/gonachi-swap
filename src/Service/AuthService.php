@@ -52,35 +52,7 @@ class AuthService
     protected static function ensureSession(): void
     {
         if (session_status() === PHP_SESSION_NONE) {
-            // 1. Define 14 days in seconds (60 * 60 * 24 * 14)
-            $sessionLifetime = 1209600;
-
-            // 2. Set the Garbage Collection lifetime on the server
-            ini_set('session.gc_maxlifetime', (string)$sessionLifetime);
-
-            // 3. Set the Cookie parameters
-            // Note: 'secure' should be true if you are running on HTTPS
-            session_set_cookie_params([
-                'lifetime' => $sessionLifetime,
-                'path'     => '/',
-                'domain'   => $_SERVER['HTTP_HOST'] ?? '',
-                'secure'   => isset($_SERVER['HTTPS']),
-                'httponly' => true,
-                'samesite' => 'Lax'
-            ]);
-
             session_start();
-
-            // 4. "Refresh" the cookie on every request so it's 14 days from LAST activity
-            // (Optional: without this, the session expires 14 days from login strictly)
-            setcookie(session_name(), session_id(), [
-                'expires'  => time() + $sessionLifetime,
-                'path'     => '/',
-                'domain'   => $_SERVER['HTTP_HOST'] ?? '',
-                'secure'   => isset($_SERVER['HTTPS']),
-                'httponly' => true,
-                'samesite' => 'Lax'
-            ]);
         }
     }
 
