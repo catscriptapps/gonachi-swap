@@ -11,9 +11,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 $navIcons = NavigationConfig::getIcons();
 
 /**
- * 💎 GONACHI REVISION: 
  * The client requested a focus on People. 
- * We've removed Adverts, Quotations, and Listings.
  */
 $label = 'People';
 $icon = $navIcons['Users'] ?? $navIcons['Dashboard'];

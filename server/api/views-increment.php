@@ -5,7 +5,6 @@ declare(strict_types=1);
 
 use Src\Controller\ListingsController;
 use Src\Controller\QuotationsController;
-use Src\Controller\AdvertsController;
 
 header('Content-Type: application/json');
 
@@ -26,13 +25,7 @@ try {
         // 💎 THE SWITCH: Route to the existing controllers
         switch ($type) {
             case 'listing':
-                $newCount = ListingsController::incrementView((string)$id);
-                break;
-            case 'quotation':
-                $newCount = QuotationsController::incrementView((string)$id);
-                break;
-            case 'ad':
-                $newCount = AdvertsController::incrementView((string)$id);
+                //$newCount = ListingsController::incrementView((string)$id);
                 break;
             default:
                 json_response(['success' => false, 'messages' => ['Invalid type']], 400);

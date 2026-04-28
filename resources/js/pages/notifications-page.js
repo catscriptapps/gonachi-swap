@@ -24,7 +24,7 @@ export function init() {
             // Grab the text from the span (e.g., "All Alerts" or "Mentors")
             const label = filterBtn.querySelector('span:first-of-type')?.innerText.trim() || 'all';
             
-            // Clean the label: "All Alerts" -> "all", "Adverts" -> "adverts"
+            // Clean the label: "All Alerts" -> "all", "Listings" -> "listings"
             const filter = label.toLowerCase().split(' ')[0];
             const baseUrl = window.APP_CONFIG.baseUrl;
             const targetUrl = `${baseUrl}notifications?filter=${filter}`;

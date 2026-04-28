@@ -27,11 +27,6 @@ $type  = $_POST['type'] ?? null;
 try {
     // 1. Whitelist configuration
     switch ($type) {
-        case 'advert':
-            $modelClass = App\Models\AdvertPic::class;
-            $dirPrefix  = 'images/uploads/adverts/';
-            $logContext = "Adverts";
-            break;
 
         case 'listing':
             $modelClass = App\Models\ListingPic::class;
@@ -39,11 +34,6 @@ try {
             $logContext = "Listings";
             break;
 
-        case 'quotation':
-            $modelClass = App\Models\QuotationPic::class;
-            $dirPrefix  = 'images/uploads/quotations/';
-            $logContext = "Quotations";
-            break;
         default:
             throw new InvalidArgumentException('Invalid media type.');
     }

@@ -46,7 +46,7 @@ function getMediaLimit()
 }
 
 /**
- * Generates the HTML status badge for an advert based on its current state.
+ * Generates the HTML status badge for an entry based on its current state.
  * * Maps internal status strings to Tailwind CSS styled span elements.
  * - 'active'   => Green (Active)
  * - 'pending'  => Yellow (Pending)

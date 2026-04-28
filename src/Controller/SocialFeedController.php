@@ -10,11 +10,8 @@ use App\Models\PostLike;
 use App\Models\PostComment;
 use App\Models\Follow;
 use App\Utils\IdEncoder;
-use Carbon\Carbon;
 use App\Traits\RecentActivityLogger;
 use Src\Service\AuthService;
-use App\Models\Advert;
-use App\Models\UserType;
 
 class SocialFeedController
 {
@@ -38,18 +35,10 @@ class SocialFeedController
             ->latest()
             ->paginate(15);
 
-        $ads = $this->getTargetedAdverts(5)->values(); // values() resets keys to 0, 1, 2...
-        $adIndex = 0;
         $html = '';
 
         foreach ($posts as $key => $post) {
             $html .= self::renderPostCard($post);
-
-            // After every 2nd post, check if we have an ad to show
-            if (($key + 1) % 2 === 0 && isset($ads[$adIndex])) {
-                $html .= self::renderSocialAdCard($ads[$adIndex]);
-                $adIndex++;
-            }
         }
 
         $GLOBALS['feedHtml'] = $html;
@@ -293,111 +282,6 @@ class SocialFeedController
         } catch (\Throwable $e) {
             ob_end_clean();
             return "<div class='p-4 bg-red-50 text-red-500'>Error: " . $e->getMessage() . "</div>";
-        }
-        return ob_get_clean();
-    }
-
-    /**
-     * Fetch Adverts targeted at the current user
-     */
-    private function getTargetedAdverts($limit = 5): \Illuminate\Support\Collection
-    {
-        $user = AuthService::currentUser();
-
-        // 1. Safety Guard: Guest or session timeout
-        if (!$user) {
-            return collect();
-        }
-
-        // 2. Extract targets from the User Model
-        // 'country_id' is cast to int, we'll stringify it for comparison with the array
-        $userCountryId = (string)$user->country_id;
-
-        // 'user_type_ids' is automatically cast to an array by the Model
-        $userTypeIds = is_array($user->user_type_ids) ? $user->user_type_ids : [];
-
-        return Advert::with(['owner', 'cta', 'package', 'pictures'])
-            ->where('status', 'active')
-            ->get()
-            ->filter(function ($ad) use ($userCountryId, $userTypeIds) {
-
-                // --- CRITERIA #2: Geography ---
-                $countries = (array)$ad->selected_countries;
-                $countryPass = in_array('ALL', $countries) || in_array($userCountryId, $countries);
-
-                if (!$countryPass) return false;
-
-                // --- CRITERIA #3: Audience Type ---
-                $targetTypes = (array)$ad->selected_user_types;
-
-                // Check for 'ALL' or see if there is an intersection between user roles and ad targets
-                $typePass = in_array('ALL', $targetTypes) ||
-                    !empty(array_intersect($userTypeIds, $targetTypes));
-
-                return $typePass;
-            })
-            ->shuffle()
-            ->take($limit);
-    }
-
-    /**
-     * Render individual Advert Card for the Social Feed
-     */
-    public static function renderSocialAdCard(\App\Models\Advert $ad): string
-    {
-        $assetBase = getAssetBase();
-        $owner = $ad->owner;
-        $countryNames = getAdvertCountryNames($ad);
-        $userTypeNames = getAdvertUserTypeNames($ad);
-
-        // 1. Prepare the same exact Data Attributes required by adverts.js
-        $adDataAttrs = [
-            'encoded-id'                 => IdEncoder::encode((int)$ad->advert_id),
-            'title'                      => $ad->title ?? '',
-            'description'                => $ad->description ?? '',
-            'call-to-action-id'          => $ad->call_to_action_id ?? '',
-            'call-to-action'             => $ad->cta->call_to_action ?? 'Learn More',
-            'keywords'                   => $ad->keywords ?? '',
-            'landing-page-url'           => $ad->landing_page_url ?? '',
-            'selected-countries'         => json_encode($ad->selected_countries ?? []),
-            'country-names'              => json_encode($countryNames ?? []), // Passing Names
-            'selected-user-types'        => json_encode($ad->selected_user_types ?? []),
-            'user-type-names'            => json_encode($userTypeNames ?? []), // Passing Names
-            'advert-package'             => $ad->package->package_name ?? '',
-            'advert-package-description' => $ad->package->package_description ?? '',
-            'advert-package-icon'        => $ad->package->package_icon ?? '',
-            'status'                     => $ad->status ?? 'pending',
-            'joined'                     => $ad->created_at ? $ad->created_at->format('M d, Y') : 'N/A',
-            'updated'                    => $ad->updated_at ? $ad->updated_at->format('M d, Y') : 'N/A',
-            'views-count'                => $ad->views ?? 0,
-
-            // Owner Data (Required for the "View" modal)
-            'owner-name'                 => trim(($owner->first_name ?? '') . ' ' . ($owner->last_name ?? '')),
-            'owner-avatar'               => $owner->avatar_url ? $assetBase . 'images/uploads/avatars/' . $owner->avatar_url : '',
-            'owner-initial'              => strtoupper(substr($owner->first_name ?? 'U', 0, 1)),
-            'owner-region'               => $owner->region->region ?? 'Unknown Region',
-            'owner-country'              => $owner->country->country ?? 'Unknown Country',
-            'owner-id'                   => (int)$ad->orig_user_id,
-            'user-types'                 => getUserRoles($owner) ?? '["Client"]',
-        ];
-
-        $data = [
-            'ad'           => $ad,
-            'encoded_id'   => $adDataAttrs['encoded-id'],
-            'assetBase'    => $assetBase,
-            'cta_text'     => $adDataAttrs['call-to-action'],
-            'adDataAttrs'  => $adDataAttrs // Pass this to the component
-        ];
-
-        $path = __DIR__ . '/../../resources/views/components/social-feed/ad-card.php';
-
-        ob_start();
-        try {
-            extract($data);
-            include $path;
-        } catch (\Throwable $e) {
-            ob_end_clean();
-            return "<div class='p-4 bg-orange-50 text-orange-500 rounded-2xl border border-orange-200'>Ad Render Error: " . $e->getMessage() . "</div>";
         }
         return ob_get_clean();
     }
