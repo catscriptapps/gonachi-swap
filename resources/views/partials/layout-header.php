@@ -2,6 +2,11 @@
 // /resources/views/partials/layout-header.php
 
 use Src\Service\AuthService;
+
+/** @var bool $isLoggedIn */
+/** @var string $baseUrl */
+/** @var string $assetBase */
+/** @var string $appName */
 ?>
 
 <header class="sticky top-0 z-40 flex h-20 shrink-0 items-center justify-between gap-x-4 border-b border-gray-200 bg-white/80 backdrop-blur-md px-4 shadow-sm sm:gap-x-6 sm:px-8 dark:bg-gray-900/80 dark:border-gray-800 transition-all duration-300">

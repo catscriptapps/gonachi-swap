@@ -15,16 +15,13 @@ class Notification extends Model
     public $timestamps = true;
 
     // Type Constants
-    const TYPE_MENTOR = 'MENTOR';
-    const TYPE_QUOTATION = 'QUOTATION';
     const TYPE_LISTING = 'LISTING';
-    const TYPE_ADVERT = 'ADVERT';
     const TYPE_SYSTEM = 'SYSTEM';
 
     protected $fillable = [
         'receiver_id',        // The person seeing the notification (User ID)
         'sender_id',          // The person who triggered it (User ID)
-        'type',               // MENTOR, QUOTATION, ADVERT, LISTING, SYSTEM
+        'type',               // LISTING, SYSTEM
         'target_id',          // The ID of the related Request eg mentor request, ad notificaiton, quotation/listing response etc
         'target_status',      // The status of the request
         'subject',            // Short title

@@ -90,10 +90,7 @@ export const NotificationRouter = {
         if (allAlertsBadge) this.decrementCount(allAlertsBadge);
 
         const typeMap = {
-            'ADVERT':       'Adverts',
-            'QUOTATION':    'Quotations',
             'LISTING':      'Listings',
-            'MENTOR':       'Mentors',
             'SYSTEM':       'System'
         };
         
