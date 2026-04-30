@@ -19,6 +19,11 @@ Capsule::schema()->disableForeignKeyConstraints();
  * This ensures we don't have "ghost" tables blocking the reset scripts.
  */
 $tablesToDrop = [
+    // Gonachi Swap System 🔄
+    'listings_pics',
+    'listings',
+    'listing_categories',
+
     // Chats System
     'conversation_messages',
     'conversations',
@@ -50,7 +55,6 @@ foreach ($tablesToDrop as $table) {
 
 $messages[] = "database cleared: All dependent and parent tables dropped.";
 
-
 /**
  * 3. CREATION PHASE - LEVEL 1: LOOKUPS & INDEPENDENT PARENTS
  * These must exist first because other tables reference them.
@@ -69,6 +73,10 @@ $messages = array_merge($messages, resetRegionsTable());
 require_once __DIR__ . '/../../scripts/reset/users.php';
 $messages = array_merge($messages, resetUsersTable());
 
+// Gonachi Swap Lookups 🏷️
+require_once __DIR__ . '/../../scripts/reset/listing-categories.php';
+$messages = array_merge($messages, resetListingCategoriesTable());
+
 /**
  * 4. CREATION PHASE - LEVEL 2: FUNCTIONAL SYSTEMS
  */
@@ -83,6 +91,13 @@ $messages = array_merge($messages, resetConversationMessagesTable());
 // Social Feed
 require_once __DIR__ . '/../../scripts/reset/social-feed.php';
 $messages = array_merge($messages, resetSocialFeedTables());
+
+// Gonachi Swap Marketplace 🔄
+require_once __DIR__ . '/../../scripts/reset/listings.php';
+$messages = array_merge($messages, resetListingsTable());
+
+require_once __DIR__ . '/../../scripts/reset/listing-pics.php';
+$messages = array_merge($messages, resetListingPicsTable());
 
 // Support
 require_once __DIR__ . '/../../scripts/reset/recent-activities.php';
