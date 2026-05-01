@@ -1,6 +1,10 @@
 <?php
 // /resources/views/partials/countries-and-regions-script.php
 
+declare(strict_types=1);
+
+/** @var \Illuminate\Support\Collection $countries */
+/** @var array<string, \Illuminate\Support\Collection> $regionsByCountry */
 ?>
 
 <script>

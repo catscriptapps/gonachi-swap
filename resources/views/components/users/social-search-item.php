@@ -6,6 +6,7 @@
 /** @var App\Models\User $user */
 /** @var string $username */
 /** @var bool $isFollowing */
+/** @var string $avatar */
 
 ?>
 

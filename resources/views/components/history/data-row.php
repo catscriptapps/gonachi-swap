@@ -4,6 +4,7 @@
 use Src\Service\AuthService;
 
 /** @var array $row */
+/** @var string $assetBase */
 
 // Configuration based on action type
 $isDeletion = str_contains(strtolower($row['action']), 'delete');

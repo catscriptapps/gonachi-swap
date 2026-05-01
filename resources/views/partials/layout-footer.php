@@ -1,5 +1,10 @@
 <?php
 // /resources/views/partials/layout-footer.php
+declare(strict_types=1);
+
+/** @var string $assetBase */
+/** @var string $appName */
+/** @var string $baseUrl */
 ?>
 
 <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-8 mt-auto">

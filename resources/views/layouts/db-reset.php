@@ -3,6 +3,13 @@
 
 declare(strict_types=1);
 
+/** @var string $title */
+/** @var string $appName */
+/** @var string $assetBase */
+/** @var string $baseUrl */
+/** @var array<string, mixed>|null $protectedPaths */
+/** @var bool $isLoggedIn */
+
 /**
  * DB Reset Layout (Maintenance Mode)
  * Mimics app.php to maintain JS compatibility but focuses on the Reset Action.

@@ -1,7 +1,13 @@
 <?php
 // /resources/views/pages/404.php
-// This page displays a standard 404 Not Found error.
 
+declare(strict_types=1);
+
+/** @var string $title */
+/** @var string $appName */
+/** @var string $baseUrl */
+
+// This page displays a standard 404 Not Found error.
 $title = '404 Not Found'; // used in layout
 // Assuming $appName is available from the main application scope.
 ?>

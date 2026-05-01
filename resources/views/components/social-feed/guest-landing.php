@@ -1,5 +1,7 @@
 <?php
 // /resources/views/components/social-feed/guest-landing.php
+
+/** @var string $baseUrl */
 ?>
 
 <div class="relative min-h-[80vh] flex items-center justify-center px-4 overflow-hidden">

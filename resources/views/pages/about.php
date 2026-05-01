@@ -2,6 +2,8 @@
 // /resources/views/pages/swap.php
 
 declare(strict_types=1);
+
+/** @var string $baseUrl */
 ?>
 
 <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 font-sans overflow-hidden">

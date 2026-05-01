@@ -2,6 +2,12 @@
 // /resources/views/partials/sidebar.php
 declare(strict_types=1);
 
+/** @var bool $isLoggedIn */
+/** @var object|null $currentUser */
+/** @var string $baseUrl */
+/** @var string $assetBase */
+/** @var string $appName */
+
 use Src\Config\NavigationConfig;
 
 $navLinks = NavigationConfig::getNavLinks($isLoggedIn);

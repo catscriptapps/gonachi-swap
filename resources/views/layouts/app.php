@@ -3,6 +3,15 @@
 
 declare(strict_types=1);
 
+/** @var string $title */
+/** @var string $appName */
+/** @var string $assetBase */
+/** @var string $baseUrl */
+/** @var array<string, mixed>|null $protectedPaths */
+/** @var object|null $currentUser */
+/** @var bool $isLoggedIn */
+/** @var string $pageFile */
+
 /**
  * Main Application Layout
  * Handles the responsive sidebar shift and global configurations.

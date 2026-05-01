@@ -3,7 +3,10 @@
 
 use App\Utils\IdEncoder;
 
+/** @var \App\Models\User $currentUser */
 /** @var \App\Models\User $user */
+/** @var string $assetBase */
+
 $user = $currentUser;
 
 // New Model Mapping

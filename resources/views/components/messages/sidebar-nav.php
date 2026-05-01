@@ -1,8 +1,12 @@
 <?php
 // /resources/components/messages/sidebar-nav.php
 
+declare(strict_types=1);
+
 use Src\Controller\MessagesController;
 
+/** @var array<string, array{icon: string, label: string}> $folders */
+/** @var string $currentFolder */
 $unreadCount = MessagesController::getUnreadCount();
 ?>
 

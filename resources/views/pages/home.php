@@ -3,6 +3,9 @@
 
 declare(strict_types=1);
 
+/** @var string $assetBase */
+/** @var string $baseUrl */
+
 /**
  * Gonachi Swap - Guest Home Page
  * Navy: secondary (900/950)

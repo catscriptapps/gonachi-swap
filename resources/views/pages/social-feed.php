@@ -3,6 +3,8 @@
 
 declare(strict_types=1);
 
+/** @var bool $isLoggedIn */
+
 if ($isLoggedIn) {
     $controller = new \Src\Controller\SocialFeedController();
     $controller->index();

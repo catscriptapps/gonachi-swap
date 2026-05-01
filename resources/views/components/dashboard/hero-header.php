@@ -1,6 +1,12 @@
 <?php
 // /resources/views/components/dashboard/hero-header.php
 
+declare(strict_types=1);
+
+/** @var string $userName */
+/** @var string $appName */
+/** @var string|null $pageIcon */
+
 // Inherits $userName, $appName, etc. from dashboard.php scope
 ?>
 

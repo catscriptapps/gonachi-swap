@@ -1,6 +1,7 @@
 <?php
 // /resources/views/pages/auth-required.php
 
+/** @var string $baseUrl */
 ?>
 <div class="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-4">
     <div class="text-red-600">

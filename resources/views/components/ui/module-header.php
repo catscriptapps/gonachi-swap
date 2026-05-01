@@ -1,9 +1,11 @@
 <?php
 // /resources/views/components/ui/module-header.php
+declare(strict_types=1);
 
 use Src\Service\AuthService;
 
-/** * @var string $headerTitle
+/**
+ * @var string $headerTitle
  * @var string $headerDesc
  * @var string $searchId
  * @var string $searchPlaceholder

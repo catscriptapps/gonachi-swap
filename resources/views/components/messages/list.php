@@ -1,5 +1,9 @@
 <?php
 // /resources/components/messages/list.php
+declare(strict_types=1);
+
+/** @var \Illuminate\Support\Collection $items */
+/** @var string $currentFolder */
 ?>
 <div id="messages-container" class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden shadow-sm">
     <?php if ($items->isEmpty()): ?>

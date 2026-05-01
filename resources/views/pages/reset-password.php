@@ -1,6 +1,10 @@
 <?php
 // /resources/views/pages/reset-password.php
 
+declare(strict_types=1);
+
+/** @var string $baseUrl */
+
 $token = $_GET['token'] ?? '';
 $email = $_GET['email'] ?? '';
 

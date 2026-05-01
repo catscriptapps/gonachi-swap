@@ -3,6 +3,11 @@
 
 declare(strict_types=1);
 
+/** @var bool $isLoggedIn */
+/** @var string $appName */
+/** @var string $baseUrl */
+/** @var object|null $currentUser */
+
 use Src\Config\NavigationConfig;
 use Src\Controller\RecentActivitiesController;
 

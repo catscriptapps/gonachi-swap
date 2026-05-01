@@ -3,6 +3,8 @@
 
 declare(strict_types=1);
 
+/** @var bool $isLoggedIn */
+
 use Src\Controller\NotificationsController;
 use App\Models\Notification;
 

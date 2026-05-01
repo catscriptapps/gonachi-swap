@@ -3,6 +3,9 @@
 
 declare(strict_types=1);
 
+/** @var string $assetBase */
+/** @var string $baseUrl */
+
 /**
  * Gonachi Swap - Guest Listings Page
  * Navy: secondary (900/950)
@@ -22,7 +25,7 @@ $listings = [
 ?>
 
 <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 font-sans">
-    
+
     <header class="mb-12" data-aos="fade-down">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 text-primary-500 text-[10px] font-black uppercase tracking-widest mb-4 border border-primary-500/20">
             Browse Market
@@ -34,7 +37,7 @@ $listings = [
 
     <div class="flex flex-col lg:flex-row gap-6 mb-12 items-center justify-between" data-aos="fade-up">
         <div class="relative w-full lg:max-w-md group">
-            <input type="text" placeholder="Search for items..." 
+            <input type="text" placeholder="Search for items..."
                 class="w-full pl-14 pr-6 py-5 bg-white dark:bg-secondary-950 border-2 border-gray-100 dark:border-white/5 rounded-2xl text-secondary-900 dark:text-white font-bold focus:border-primary-500 outline-none transition-all shadow-lg shadow-gray-200/50 dark:shadow-none">
             <svg class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-primary-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -53,10 +56,10 @@ $listings = [
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
         <?php foreach ($listings as $item): ?>
             <div data-aos="fade-up" class="group relative bg-white dark:bg-secondary-950 rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-white/5 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                
+
                 <div class="aspect-[4/3] overflow-hidden relative">
                     <img src="<?= $assetBase ?>images/home/<?= $item['img'] ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" alt="<?= $item['title'] ?>">
-                    
+
                     <div class="absolute top-5 left-5 flex flex-col gap-2">
                         <span class="px-4 py-1.5 bg-secondary-950/80 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-lg">
                             <?= $item['loc'] ?>
@@ -77,17 +80,21 @@ $listings = [
 
                     <div class="flex items-center gap-4 mb-8 text-gray-400 dark:text-gray-500">
                         <div class="flex items-center gap-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                             <span class="text-[11px] font-bold uppercase">2h ago</span>
                         </div>
                         <div class="w-1 h-1 rounded-full bg-gray-300"></div>
                         <div class="flex items-center gap-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                             <span class="text-[11px] font-bold uppercase">3km away</span>
                         </div>
                     </div>
 
-                    <a href="<?= $baseUrl ?>login" 
+                    <a href="<?= $baseUrl ?>login"
                         class="block w-full text-center py-4 bg-gray-100 dark:bg-white/5 hover:bg-primary-500 dark:hover:bg-primary-500 text-secondary-900 dark:text-white hover:text-secondary-950 font-black uppercase tracking-widest text-xs rounded-2xl transition-all">
                         View Details
                     </a>
@@ -109,6 +116,12 @@ $listings = [
 </div>
 
 <style>
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 </style>
