@@ -151,7 +151,7 @@ $getCategoryIcon = function ($category) use ($icons) {
     </div>
 
     <div class="space-y-5 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700 fill-mode-both">
-        <div class="flex items-end justify-between px-2">
+        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between px-2 gap-4 sm:gap-0">
             <div>
                 <h2 class="text-2xl font-black text-secondary-900 dark:text-white tracking-tight flex items-center gap-3">
                     Recent Activity
