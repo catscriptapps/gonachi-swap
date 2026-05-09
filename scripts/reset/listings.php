@@ -29,8 +29,8 @@ function resetListingsTable(): array
             // Attributes
             $table->string('listing_title', 255);
             $table->text('listing_description')->nullable();
-            $table->tinyInteger('type_id')->comment('1: Swap, 2: Sale, 3: Gift')->index();
-            $table->tinyInteger('condition_id')->comment('1: New, 2: Like New, 3: Used, 4: Parts')->index();
+            $table->unsignedInteger('type_id')->index();
+            $table->unsignedInteger('condition_id')->index();
             $table->tinyInteger('status_id')->default(0)->comment('0: Draft, 1: Posted, 2: Completed, 3: Archived')->index();
 
             // Details
@@ -54,6 +54,8 @@ function resetListingsTable(): array
             // Foreign Keys
             $table->foreign('orig_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('category_id')->on('listing_categories');
+            $table->foreign('type_id')->references('type_id')->on('listing_types');
+            $table->foreign('condition_id')->references('condition_id')->on('listing_conditions');
         });
 
         $messages[] = "created {$tableName} table structure.";

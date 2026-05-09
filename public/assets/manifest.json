@@ -220,6 +220,15 @@
       "_table-pagination-count.min.js"
     ]
   },
+  "resources/js/pages/listings-page.js": {
+    "file": "js/listings-page.min.js",
+    "name": "listings-page",
+    "src": "resources/js/pages/listings-page.js",
+    "isEntry": true,
+    "imports": [
+      "_animations.min.js"
+    ]
+  },
   "resources/js/pages/messages-page.js": {
     "file": "js/messages-page.min.js",
     "name": "messages-page",

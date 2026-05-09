@@ -22,6 +22,8 @@ $tablesToDrop = [
     // Gonachi Swap System 🔄
     'listings_pics',
     'listings',
+    'listing_types',
+    'listing_conditions',
     'listing_categories',
 
     // Chats System
@@ -76,6 +78,12 @@ $messages = array_merge($messages, resetUsersTable());
 // Gonachi Swap Lookups 🏷️
 require_once __DIR__ . '/../../scripts/reset/listing-categories.php';
 $messages = array_merge($messages, resetListingCategoriesTable());
+
+require_once __DIR__ . '/../../scripts/reset/listing-types.php';
+$messages = array_merge($messages, resetListingTypesTable());
+
+require_once __DIR__ . '/../../scripts/reset/listing-conditions.php';
+$messages = array_merge($messages, resetListingConditionsTable());
 
 /**
  * 4. CREATION PHASE - LEVEL 2: FUNCTIONAL SYSTEMS

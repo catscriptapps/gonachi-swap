@@ -68,6 +68,16 @@ class Listing extends Model
         return $this->belongsTo(ListingCategory::class, 'category_id', 'category_id');
     }
 
+    public function type(): BelongsTo
+    {
+        return $this->belongsTo(ListingType::class, 'type_id', 'type_id');
+    }
+
+    public function condition(): BelongsTo
+    {
+        return $this->belongsTo(ListingCondition::class, 'condition_id', 'condition_id');
+    }
+
     public function pictures(): HasMany
     {
         return $this->hasMany(ListingPic::class, 'listing_id', 'listing_id');
