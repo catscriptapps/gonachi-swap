@@ -2,9 +2,9 @@
 
 import { AnimationEngine } from '../utils/animations';
 import { initListingsModal } from '../modals/listings-modal.js';
-//import { initViewListing } from '../utils/listings/view-listing.js';
+import { initViewListing } from '../utils/listings/view-listing.js';
 //import { initDeleteListing } from '../utils/listings/delete-listing.js';
-//import { initListingActions } from '../utils/listings/listing-actions.js';
+import { initListingActions } from '../utils/listings/listing-actions.js';
 //import { initListingInfiniteScroll } from '../utils/listings/infinite-scroll-listings.js';
 //import { initListingSearch } from '../utils/listings/search-listings.js';
 //import { ListingCounter } from '../utils/listings/listing-counter-helper.js';
@@ -20,9 +20,9 @@ export function init() {
     AnimationEngine.refresh();
 
     // 2. Initialize Core Listing Interactivity
-    // initViewListing();      // Handles clicking cards to see details
+    initViewListing();      // Handles clicking cards to see details
     //initDeleteListing();    // Handles removal if user is viewing their own card
-    //initListingActions();   // Handles "Swap Request" or "Interested" buttons
+    initListingActions();   // Handles "Swap Request" or "Interested" buttons
 
     // 3. Update UI Helpers
     //ListingCounter.update(); // Updates the total count in the sidebar/header

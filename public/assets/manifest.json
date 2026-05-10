@@ -41,6 +41,10 @@
     "file": "js/preload-helper.min.js",
     "name": "preload-helper"
   },
+  "_preview.min.js": {
+    "file": "js/preview.min.js",
+    "name": "preview"
+  },
   "_regions-component.min.js": {
     "file": "js/regions-component.min.js",
     "name": "regions-component"
@@ -238,7 +242,10 @@
       "_modal-factory.min.js",
       "_regions-component.min.js",
       "_form-validator.min.js",
-      "_spinner-utils.min.js"
+      "_spinner-utils.min.js",
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_preview.min.js"
     ]
   },
   "resources/js/pages/messages-page.js": {
@@ -283,6 +290,7 @@
       "_toast.min.js",
       "_spa-router.min.js",
       "_delete-factory.min.js",
+      "_preview.min.js",
       "_animations.min.js",
       "_modal-factory.min.js",
       "_regions-component.min.js",
