@@ -40,9 +40,8 @@ $listingDataAttrs = [
 ];
 
 // Thumbnail Logic
-$thumbnailUrl = !empty($item['thumbnail']) 
-    ? $assetBase . 'images/uploads/listings/' . $item['thumbnail'] 
-    : $assetBase . 'images/placeholder-listing.webp';
+$hasThumbnail = !empty($item['thumbnail']);
+$thumbnailUrl = $hasThumbnail ? $assetBase . 'images/uploads/listings/' . $item['thumbnail'] : '';
 
 // Status Badge Logic 💎
 $statusBadge = match ($statusId) {
@@ -59,9 +58,19 @@ $statusBadge = match ($statusId) {
 
     <!-- Image Section -->
     <div class="aspect-[4/3] overflow-hidden relative view-listing-trigger cursor-pointer">
-        <img src="<?= $thumbnailUrl ?>" 
-             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
-             alt="<?= htmlspecialchars($item['listing_title'] ?? 'Listing') ?>">
+        <?php if ($hasThumbnail): ?>
+            <img src="<?= $thumbnailUrl ?>"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                alt="<?= htmlspecialchars($item['listing_title'] ?? 'Listing') ?>">
+        <?php else: ?>
+            <!-- Premium Tailwind CSS Placeholder Impression -->
+            <div class="w-full h-full bg-gray-50 dark:bg-secondary-900/30 flex flex-col items-center justify-center gap-3 group-hover:bg-gray-100 dark:group-hover:bg-secondary-900/50 transition-colors duration-500">
+                <svg class="w-12 h-12 text-gray-200 dark:text-secondary-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="text-[9px] font-black uppercase tracking-widest text-gray-400 dark:text-secondary-700">No Image Provided</span>
+            </div>
+        <?php endif; ?>
 
         <div class="absolute top-5 left-5 flex flex-col gap-2">
             <span class="px-4 py-1.5 bg-secondary-950/80 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-lg">
@@ -69,11 +78,13 @@ $statusBadge = match ($statusId) {
             </span>
             <?= $statusBadge ?>
         </div>
-        
+
         <?php if ($isOwner): ?>
             <div class="absolute top-5 right-5">
                 <button class="edit-listing-btn p-2 bg-white/90 backdrop-blur-md rounded-full text-secondary-900 hover:bg-primary-500 hover:text-secondary-950 transition-all shadow-lg">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
                 </button>
             </div>
         <?php endif; ?>

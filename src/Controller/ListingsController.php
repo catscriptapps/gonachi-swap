@@ -236,7 +236,7 @@ class ListingsController
 
         // Image Handling
         $firstPic = $listing->pictures()->orderBy('pos_index', 'asc')->first();
-        $item['thumbnail'] = $firstPic ? $firstPic->pic_name : 'placeholder.jpg';
+        $item['thumbnail'] = $firstPic ? $firstPic->pic_name : '';
 
         $GLOBALS['assetBase'] = getAssetBase();
 
