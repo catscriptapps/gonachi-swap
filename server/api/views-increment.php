@@ -25,7 +25,7 @@ try {
         // 💎 THE SWITCH: Route to the existing controllers
         switch ($type) {
             case 'listing':
-                //$newCount = ListingsController::incrementView((string)$id);
+                $newCount = ListingsController::incrementView((string)$id);
                 break;
             default:
                 json_response(['success' => false, 'messages' => ['Invalid type']], 400);

@@ -110,6 +110,35 @@ class ListingsController
     }
 
     /**
+     * Increment View Count - Gonachi Style 💎
+     */
+    public static function incrementView(string $encodedId): ?int
+    {
+        try {
+            // 1. Resolve ID
+            $id = IdEncoder::decode($encodedId);
+
+            // 2. Find model
+            $listing = Listing::find($id);
+            if (!$listing) return null;
+
+            // 3. Ownership Shield: Don't count the owner's own views
+            $currentUserId = (int)($_SESSION['user_id'] ?? 0);
+            if ((int)$listing->orig_user_id === $currentUserId) {
+                return (int)$listing->views;
+            }
+
+            // 4. Atomic Increment using the correct field 'views'
+            $listing->increment('views');
+
+            // 5. Return fresh count for the UI
+            return (int)$listing->views;
+        } catch (\Throwable $e) {
+            return null;
+        }
+    }
+
+    /**
      * Prepare data for the Listings Page
      */
     public function index(bool $all = false): void
@@ -227,18 +256,37 @@ class ListingsController
     {
         $item = $listing->toArray();
         $item['encoded_id'] = IdEncoder::encode((int)$listing->listing_id);
+
+        // Formatted dates for the UI
         $item['created_at_formatted'] = $listing->created_at ? $listing->created_at->format('M d, Y') : 'N/A';
+        $item['updated_at_formatted'] = $listing->updated_at ? $listing->updated_at->format('M d, Y') : $item['created_at_formatted'];
 
-        // Relationships
-        $item['category_label'] = $listing->category->category_name ?? 'General';
-        $item['category_icon']  = $listing->category->category_icon ?? 'tag'; // Heroicon name
-        $item['country_name']   = $listing->country->country ?? '';
+        // Resolve labels using relationships
+        $item['category_label']  = $listing->category->category_name ?? 'General';
+        $item['category_icon']   = $listing->category->category_icon ?? 'tag';
+        $item['type_label']      = $listing->type->type_name ?? 'Swap';
+        $item['condition_label'] = $listing->condition->condition_name ?? 'Used';
+        $item['country_name']    = $listing->country->country ?? '';
+        $item['region_name']     = $listing->region->region ?? '';
 
-        // Image Handling
+        // 💎 Fetch the first picture for the Listing
         $firstPic = $listing->pictures()->orderBy('pos_index', 'asc')->first();
-        $item['thumbnail'] = $firstPic ? $firstPic->pic_name : '';
+        $item['thumbnail'] = $firstPic ? $firstPic->pic_name : null;
 
+        // Mirroring UsersController: Set the global assetBase
         $GLOBALS['assetBase'] = getAssetBase();
+
+        // Pass the owner object directly
+        $owner = $listing->user;
+        $item['user'] = $owner ? $owner->toArray() : null;
+
+        // Owner Geography
+        $item['owner_country']  = $owner->country->country ?? 'N/A';
+        $item['owner_region']   = $owner->region->region ?? 'N/A';
+        $item['owner_location'] = ($item['owner_region'] !== 'N/A' ? $item['owner_region'] : 'Unknown Region') . ', ' . ($item['owner_country'] !== 'N/A' ? $item['owner_country'] : 'Unknown Country');
+
+        // Roles Mapping
+        $item['user_types_json'] = getUserRoles($owner);
 
         // View Path - Using dashes in file names as per your convention
         $path = __DIR__ . '/../../resources/views/components/listings/data-card.php';

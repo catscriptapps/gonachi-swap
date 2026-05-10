@@ -83,6 +83,18 @@ class Listing extends Model
         return $this->hasMany(ListingPic::class, 'listing_id', 'listing_id');
     }
 
+    // --- GEOGRAPHY ---
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class, 'country_id', 'id');
+    }
+
+    public function region(): BelongsTo
+    {
+        return $this->belongsTo(Region::class, 'region_id', 'id');
+    }
+
     /* -------------------------------------------------------------------------- */
     /* LOGIC                                                                      */
     /* -------------------------------------------------------------------------- */
