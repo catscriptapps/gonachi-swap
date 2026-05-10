@@ -98,7 +98,7 @@ if (AuthService::isLoggedIn()) {
                             </svg>
                             My Items
                         </a>
-                        <button id="create-listing-btn" class="flex-1 md:flex-none px-6 bg-primary-500 text-secondary-950 rounded-[1.5rem] font-black text-[11px] uppercase tracking-widest hover:bg-secondary-950 hover:text-white transition-all shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 whitespace-nowrap">
+                        <button id="create-new-listing-btn" class="flex-1 md:flex-none px-6 bg-primary-500 text-secondary-950 rounded-[1.5rem] font-black text-[11px] uppercase tracking-widest hover:bg-secondary-950 hover:text-white transition-all shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 whitespace-nowrap">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 4v16m8-8H4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>

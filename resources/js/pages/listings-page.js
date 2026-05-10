@@ -1,7 +1,7 @@
 // /resources/js/pages/listings-page.js
 
 import { AnimationEngine } from '../utils/animations';
-//import { initListingsModal } from '../modals/listings-modal.js';
+import { initListingsModal } from '../modals/listings-modal.js';
 //import { initViewListing } from '../utils/listings/view-listing.js';
 //import { initDeleteListing } from '../utils/listings/delete-listing.js';
 //import { initListingActions } from '../utils/listings/listing-actions.js';
@@ -28,7 +28,7 @@ export function init() {
     //ListingCounter.update(); // Updates the total count in the sidebar/header
 
     // 4. Initialize Data Fetching & Modals
-    //initListingsModal();            // General listing-related modals
+    initListingsModal();            // General listing-related modals
     //initListingInfiniteScroll();    // Handles pagination via scrolling
     //initListingSearch();           // Handles the sidebar checkboxes and search input
 

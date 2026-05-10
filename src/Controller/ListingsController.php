@@ -18,7 +18,7 @@ class ListingsController
     /**
      * Deactivates a listing - Gonachi Style 💎
      */
-    public function deactivate($id): array
+    public function deactivate(string|int $id): array
     {
         try {
             $rawId = (is_string($id) && !is_numeric($id)) ? IdEncoder::decode($id) : (int)$id;
@@ -52,9 +52,45 @@ class ListingsController
     }
 
     /**
+     * Reactivates a listing - Gonachi Style 💎
+     */
+    public function reactivate(string|int $id): array
+    {
+        try {
+            $rawId = (is_string($id) && !is_numeric($id)) ? IdEncoder::decode($id) : (int)$id;
+            $listing = Listing::find($rawId);
+
+            if (!$listing) {
+                return ['success' => false, 'messages' => ['Failed to locate listing.']];
+            }
+
+            // Ownership Check
+            $currentUserId = (int)($_SESSION['user_id'] ?? 0);
+            if ((int)$listing->orig_user_id !== $currentUserId) {
+                return ['success' => false, 'messages' => ['Unauthorized action.']];
+            }
+
+            $listing->status_id = 1; // Posted/Active
+
+            if ($listing->save()) {
+                static::logActivity("Reactivated listing: {$listing->listing_title}", 'Listings');
+                return [
+                    'success' => true,
+                    'messages' => ['Listing is live again!'],
+                    'cardHtml' => self::renderCard($listing->fresh(['user', 'category', 'pictures']))
+                ];
+            }
+
+            return ['success' => false, 'messages' => ['Could not update listing status.']];
+        } catch (\Throwable $e) {
+            return ['success' => false, 'messages' => [$e->getMessage()]];
+        }
+    }
+
+    /**
      * Delete Listing (Triggers physical file removal via Model events)
      */
-    public function delete($id): array
+    public function delete(string|int $id): array
     {
         try {
             $rawId = (is_string($id) && !is_numeric($id)) ? IdEncoder::decode($id) : (int)$id;
@@ -99,8 +135,8 @@ class ListingsController
             $builder->where(function ($q) use ($query) {
                 $term = '%' . trim($query) . '%';
                 $q->where('listing_title', 'LIKE', $term)
-                  ->orWhere('city', 'LIKE', $term)
-                  ->orWhere('listing_description', 'LIKE', $term);
+                    ->orWhere('city', 'LIKE', $term)
+                    ->orWhere('listing_description', 'LIKE', $term);
             });
         }
 
@@ -152,11 +188,15 @@ class ListingsController
             $listing->listing_title       = trim($data['listing_title'] ?? '');
             $listing->listing_description = trim($data['listing_description'] ?? '');
             $listing->category_id         = (int)($data['category_id'] ?? 0);
+            $listing->type_id             = (int)($data['type_id'] ?? 1);
+            $listing->condition_id        = (int)($data['condition_id'] ?? 3);
             $listing->city                = trim($data['city'] ?? '');
             $listing->country_id          = (int)($data['country_id'] ?? 1);
             $listing->region_id           = (int)($data['region_id'] ?? 0);
             $listing->price               = $data['price'] ?? 0.00;
+            $listing->trade_pref          = trim($data['trade_pref'] ?? '');
             $listing->contact_phone       = $data['contact_phone'] ?? null;
+            $listing->youtube_url         = trim($data['youtube_url'] ?? '');
 
             if ($isNew) {
                 $listing->status_id = 1; // Active

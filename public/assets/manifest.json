@@ -41,6 +41,10 @@
     "file": "js/preload-helper.min.js",
     "name": "preload-helper"
   },
+  "_regions-component.min.js": {
+    "file": "js/regions-component.min.js",
+    "name": "regions-component"
+  },
   "_register-new-user.min.js": {
     "file": "js/register-new-user.min.js",
     "name": "register-new-user",
@@ -86,6 +90,7 @@
     "name": "users-modal",
     "imports": [
       "_modal-factory.min.js",
+      "_regions-component.min.js",
       "_form-validator.min.js",
       "_spinner-utils.min.js",
       "_table-pagination-count.min.js"
@@ -131,6 +136,7 @@
       "_register-new-user.min.js",
       "_users-modal.min.js",
       "_modal-factory.min.js",
+      "_regions-component.min.js",
       "_form-validator.min.js",
       "_spinner-utils.min.js",
       "_table-pagination-count.min.js"
@@ -186,6 +192,7 @@
       "_register-new-user.min.js",
       "_users-modal.min.js",
       "_modal-factory.min.js",
+      "_regions-component.min.js",
       "_form-validator.min.js",
       "_spinner-utils.min.js",
       "_table-pagination-count.min.js"
@@ -215,6 +222,7 @@
       "_register-new-user.min.js",
       "_users-modal.min.js",
       "_modal-factory.min.js",
+      "_regions-component.min.js",
       "_form-validator.min.js",
       "_spinner-utils.min.js",
       "_table-pagination-count.min.js"
@@ -226,7 +234,11 @@
     "src": "resources/js/pages/listings-page.js",
     "isEntry": true,
     "imports": [
-      "_animations.min.js"
+      "_animations.min.js",
+      "_modal-factory.min.js",
+      "_regions-component.min.js",
+      "_form-validator.min.js",
+      "_spinner-utils.min.js"
     ]
   },
   "resources/js/pages/messages-page.js": {
@@ -273,6 +285,7 @@
       "_delete-factory.min.js",
       "_animations.min.js",
       "_modal-factory.min.js",
+      "_regions-component.min.js",
       "_form-validator.min.js",
       "_spinner-utils.min.js",
       "_table-pagination-count.min.js"
@@ -311,6 +324,7 @@
       "_upload-modal.min.js",
       "_register-new-user.min.js",
       "_users-modal.min.js",
+      "_regions-component.min.js",
       "_table-pagination-count.min.js"
     ]
   },
@@ -326,6 +340,7 @@
       "_toast.min.js",
       "_table-search.min.js",
       "_modal-factory.min.js",
+      "_regions-component.min.js",
       "_form-validator.min.js",
       "_spinner-utils.min.js",
       "_preload-helper.min.js"
