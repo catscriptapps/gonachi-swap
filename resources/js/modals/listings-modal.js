@@ -49,7 +49,9 @@ async function fetchListingDependencies(countryId = '') {
 
 // --- Add Listing ---
 async function openAddListingModal() {
-    const deps = await fetchListingDependencies('');
+    // 🍊 Improvement: Fetch dependencies for default country to pre-populate regions list
+    const defaultCountryId = window.APP_CONFIG.userDefaults?.country_id || '';
+    const deps = await fetchListingDependencies(defaultCountryId);
 
     if (listingModal) listingModal.destroy();
 
@@ -60,8 +62,8 @@ async function openAddListingModal() {
         listingTitle: '',
         listingDescription: '',
         categoryId: '',
-        typeId: 1, // Default to Swap
-        conditionId: 3, // Default to Used
+        typeId: 0, // Default to Select One
+        conditionId: 0, // Default to Select One
         price: '',
         tradePref: '',
         city: '',
@@ -127,7 +129,7 @@ export async function openEditListingModal(trigger) {
 
     // Sync regions for Edit Mode
     const editForm = document.getElementById('listing-edit-form');
-    const countrySelect = editForm.querySelector('select[name="countryId"]');
+    const countrySelect = editForm.querySelector('select[name="country_id"]');
 
     if (countrySelect && countrySelect.value) {
         const event = new CustomEvent('change', {

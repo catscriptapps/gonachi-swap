@@ -18,8 +18,8 @@ export function listingForm({
     countryId = '',
     regionId = '',
     categoryId = '',
-    typeId = 1, // Default 1: Swap
-    conditionId = 3, // Default 3: Used
+    typeId = 0, // Default 0: Select one
+    conditionId = 0, // Default 0: Select one
 
     // Data Dependencies
     countries = [],
@@ -113,8 +113,8 @@ export function listingForm({
                     </select>
                 </div>
                 <div>
-                    <label for="${idPrefix}-city" class="${labelClasses}">City</label>
-                    <input type="text" id="${idPrefix}-city" name="city" placeholder="e.g. Toronto" value="${city}" class="${inputClasses}" />
+                    <label for="${idPrefix}-city" class="${labelClasses}">City *</label>
+                    <input type="text" id="${idPrefix}-city" name="city" placeholder="e.g. Toronto" value="${city}" class="${inputClasses}" required />
                 </div>
             </div>
         </div>

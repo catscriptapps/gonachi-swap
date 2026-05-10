@@ -7,15 +7,16 @@ export function enableDynamicRegionLoading(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
 
-    const countrySelect = form.querySelector('select[name="countryId"]');
-    const regionSelect = form.querySelector('select[name="regionId"]');
+    // 🍊 Support both camelCase and snake_case to work with different form versions
+    const countrySelect = form.querySelector('select[name="countryId"]') || form.querySelector('select[name="country_id"]');
+    const regionSelect = form.querySelector('select[name="regionId"]') || form.querySelector('select[name="region_id"]');
 
     if (!countrySelect || !regionSelect) return;
 
     // We add 'event' (e) as a parameter here to catch custom data
     countrySelect.addEventListener('change', async (e) => {
         const countryId = countrySelect.value;
-        
+
         // Grab the pre-selected ID if it was passed via CustomEvent
         const preSelectedId = e.detail?.preSelectedRegionId;
 
@@ -29,7 +30,7 @@ export function enableDynamicRegionLoading(formId) {
 
         try {
             const regions = await fetchRegions(countryId);
-            
+
             // Build the options
             const optionsHtml = regions.map(r => {
                 // Check if this region matches the one we want to auto-select
