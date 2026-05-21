@@ -172,11 +172,15 @@ export const ViewContentMapper = {
         const tradePrefEl = document.getElementById('view-listing-trade-pref');
         const priceEl = document.getElementById('view-listing-price');
         const tradeWrapper = document.getElementById('view-listing-trade-pref-wrapper');
+        const typeBadgeEl = document.getElementById('view-listing-type-badge');
+        const conditionBadgeEl = document.getElementById('view-listing-condition-badge');
 
         if (typeEl) typeEl.textContent = data.typeName || 'Swap';
         if (conditionEl) conditionEl.textContent = data.conditionName || 'Used';
         if (tradePrefEl) tradePrefEl.textContent = data.tradePref || 'None';
         if (priceEl) priceEl.textContent = data.price && data.price !== 'Trade' ? `$${data.price}` : 'Trade Only';
+        if (typeBadgeEl) typeBadgeEl.textContent = data.typeName || 'Swap';
+        if (conditionBadgeEl) conditionBadgeEl.textContent = data.conditionName || 'Used';
 
         if (tradeWrapper) {
             tradeWrapper.classList.toggle('hidden', !data.tradePref || data.tradePref === 'None');
@@ -211,11 +215,20 @@ export const ViewContentMapper = {
         const statusEl = document.getElementById('view-listing-status');
         if (!statusEl) return;
         const statusId = parseInt(data.statusId) || 0;
-        let text = 'DRAFT', classes = 'px-3 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest border ';
+        let text = 'DRAFT', classes = 'inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider border ';
         switch (statusId) {
-            case 1: text = 'ACTIVE'; classes += 'border-primary-100 bg-primary-50 text-primary-500'; break;
-            case 2: text = 'ARCHIVED'; classes += 'border-gray-100 bg-gray-50 text-gray-400'; break;
-            default: text = 'DRAFT'; classes += 'border-secondary-800 bg-secondary-900/50 text-gray-500'; break;
+            case 1:
+                text = 'ACTIVE';
+                classes += 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 border border-green-100 dark:border-green-800/30';
+                break;
+            case 2:
+                text = 'ARCHIVED';
+                classes += 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700';
+                break;
+            default:
+                text = 'DRAFT';
+                classes += 'bg-primary-50 dark:bg-primary-900/20 text-primary-400 dark:text-primary-300 border border-primary-100 dark:border-primary-800/30';
+                break;
         }
         statusEl.textContent = text;
         statusEl.className = classes;

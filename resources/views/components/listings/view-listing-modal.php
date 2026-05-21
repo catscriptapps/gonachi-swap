@@ -44,9 +44,16 @@
                     <div class="min-w-0">
                         <div class="flex items-center gap-3 mb-1">
                             <h3 class="text-xl font-black text-secondary-900 dark:text-white truncate leading-tight" id="view-listing-title">Listing Title</h3>
-                            <span id="view-listing-status" class="px-3 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest border border-primary-100 bg-primary-50 text-primary-500">Active</span>
+                            <span id="view-listing-status" class="inline-flex items-center rounded-full bg-green-50 dark:bg-green-900/20 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-green-600 dark:text-green-400 border border-green-100 dark:border-green-800/30">Active</span>
                         </div>
-                        <p id="view-listing-category-sub" class="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">General Category</p>
+                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                            <p id="view-listing-category-sub" class="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em] leading-none">General Category</p>
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-secondary-800 hidden sm:inline-block"></span>
+                            <div class="flex items-center gap-1.5">
+                                <span id="view-listing-type-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-primary-50 dark:bg-primary-950/40 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-900/30 shadow-sm">Standard</span>
+                                <span id="view-listing-condition-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-secondary-50 dark:bg-secondary-900/40 text-secondary-600 dark:text-secondary-400 border border-secondary-100 dark:border-secondary-800/30 shadow-sm">Used</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <button type="button" class="close-view-listing-modal text-gray-400 hover:text-primary-500 p-2 transition-colors">
