@@ -110,8 +110,18 @@ $statusId = (int)($item['status_id'] ?? 0);
 
         <?php include __DIR__ . '/../ui/card-owner.php'; ?>
 
-        <div class="mb-2">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
             <span class="text-[10px] font-black text-primary-500 uppercase tracking-widest"><?= htmlspecialchars($categoryLabel) ?></span>
+            
+            <div class="flex items-center gap-1.5">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-primary-50 dark:bg-primary-950/40 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-900/30 shadow-sm">
+                    <?= htmlspecialchars($item['type_label'] ?? 'Standard') ?>
+                </span>
+                
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-secondary-50 dark:bg-secondary-900/40 text-secondary-600 dark:text-secondary-400 border border-secondary-100 dark:border-secondary-800/30 shadow-sm">
+                    <?= htmlspecialchars($item['condition_label'] ?? 'Used') ?>
+                </span>
+            </div>
         </div>
 
         <h3 class="text-xl font-black text-secondary-900 dark:text-white mb-2 group-hover:text-primary-500 transition-colors line-clamp-1">
