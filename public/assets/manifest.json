@@ -245,7 +245,8 @@
       "_spinner-utils.min.js",
       "_upload-modal.min.js",
       "_toast.min.js",
-      "_preview.min.js"
+      "_preview.min.js",
+      "_delete-factory.min.js"
     ]
   },
   "resources/js/pages/messages-page.js": {
