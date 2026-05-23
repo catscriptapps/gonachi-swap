@@ -5,7 +5,7 @@ import { initListingsModal } from '../modals/listings-modal.js';
 import { initViewListing } from '../utils/listings/view-listing.js';
 import { initDeleteListing } from '../utils/listings/delete-listing.js';
 import { initListingActions } from '../utils/listings/listing-actions.js';
-//import { initListingInfiniteScroll } from '../utils/listings/infinite-scroll-listings.js';
+import { initListingInfiniteScroll } from '../utils/listings/infinite-scroll-listings.js';
 //import { initListingSearch } from '../utils/listings/search-listings.js';
 //import { ListingCounter } from '../utils/listings/listing-counter-helper.js';
 //import { initRegisterNewUser } from '../utils/home/register-new-user.js';
@@ -29,7 +29,7 @@ export function init() {
 
     // 4. Initialize Data Fetching & Modals
     initListingsModal();            // General listing-related modals
-    //initListingInfiniteScroll();    // Handles pagination via scrolling
+    initListingInfiniteScroll();    // Handles pagination via scrolling
     //initListingSearch();           // Handles the sidebar checkboxes and search input
 
     // 5. Shared Community Components

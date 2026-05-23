@@ -185,9 +185,12 @@ class ListingsController
             header('Content-Type: application/json');
             echo json_encode([
                 'success' => true,
-                'html'    => $html,
-                'total'   => $totalFiltered,
-                'hasMore' => ($offset + $listings->count()) < $totalFiltered
+                'data'    => array_map(fn($l) => ['cardHtml' => self::renderCard($l)], $listings->all()),
+                'meta'    => [
+                    'total'   => $totalFiltered,
+                    'loaded'  => $listings->count(),
+                    'hasMore' => ($offset + $listings->count()) < $totalFiltered
+                ]
             ]);
             exit;
         }
