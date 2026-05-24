@@ -21,6 +21,7 @@ if (AuthService::isLoggedIn()) {
     $listingController->index(true);
 
     $listingCards = $GLOBALS['listingCards'] ?? '';
+    $totalCount   = $GLOBALS['totalCount'] ?? 0;
 ?>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 font-sans" x-data="{ showFilters: false }">
@@ -32,6 +33,9 @@ if (AuthService::isLoggedIn()) {
             <h1 class="text-4xl lg:text-6xl font-black text-secondary-900 dark:text-white leading-none tracking-tighter">
                 Current <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-orange-600">Listings</span>
             </h1>
+            <p class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-1">
+                <span id="listings-counter-number" class="text-primary-400"><?= $totalCount ?></span> Active Listings
+            </p>
         </header>
 
         <div class="w-full">
@@ -42,10 +46,13 @@ if (AuthService::isLoggedIn()) {
                     <!-- Search Input -->
                     <div class="relative flex-grow group">
                         <input type="text" id="listing-search-input" placeholder="Search swaps..."
-                            class="w-full pl-14 pr-6 py-5 bg-white dark:bg-secondary-950 border-2 border-gray-100 dark:border-white/5 rounded-[2rem] text-secondary-900 dark:text-white font-bold focus:border-primary-500 outline-none transition-all shadow-lg shadow-gray-200/50 dark:shadow-none">
+                            class="w-full pl-14 pr-12 py-5 bg-white dark:bg-secondary-950 border-2 border-gray-100 dark:border-white/5 rounded-[2rem] text-secondary-900 dark:text-white font-bold focus:border-primary-500 outline-none transition-all shadow-lg shadow-gray-200/50 dark:shadow-none">
                         <svg class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-primary-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
+                        <div id="listing-search-loader" class="absolute right-6 top-1/2 -translate-y-1/2 hidden">
+                            <div class="animate-spin w-5 h-5 border-2 border-primary-500 border-t-transparent rounded-full"></div>
+                        </div>
                     </div>
 
                     <!-- Action Buttons Container -->
@@ -119,6 +126,12 @@ if (AuthService::isLoggedIn()) {
                             <p class="text-gray-400 font-black uppercase tracking-widest text-sm">No items found matching your filters.</p>
                         </div>
                     <?php endif; ?>
+
+                    <!-- No Results Found State -->
+                    <div id="no-listings-found-state" class="hidden p-32 text-center bg-white dark:bg-secondary-950 rounded-[3rem] border border-dashed border-gray-200 dark:border-white/10">
+                        <p class="text-gray-400 font-black uppercase tracking-widest text-sm mb-2">No items found matching "<span id="listing-search-term-display" class="text-primary-500 lowercase"></span>".</p>
+                        <p class="text-xs text-gray-500 font-bold">Try adjusting your search keywords or categories.</p>
+                    </div>
 
                     <div id="listings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 <?= empty($listingCards) ? 'hidden' : '' ?>">
                         <?= $listingCards ?>

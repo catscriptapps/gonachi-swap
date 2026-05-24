@@ -2,6 +2,7 @@
 
 import { createDeleteHandler } from '../../factories/delete-factory.js';
 import { showToast } from '../../ui/toast.js';
+import { ListingCounter } from './listing-counter-helper.js';
 
 /**
  * Attaches delete functionality to the listings grid via delegation.
@@ -37,6 +38,9 @@ export function initDeleteListing(gridSelector = '#listings-grid') {
 
             // 1. Show high-contrast toast
             showToast('Listing successfully deleted', 'success');
+
+            // Update listings counter
+            ListingCounter.update();
 
             // 2. Handle empty state if no cards are left
             const remainingCards = grid.querySelectorAll('.listing-card-wrapper').length;

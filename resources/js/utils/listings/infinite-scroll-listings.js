@@ -72,5 +72,10 @@ export function initListingInfiniteScroll() {
         }, 200); // 200ms Throttle
     };
 
+    window.addEventListener('listings-search-updated', (e) => {
+        currentPage = 1;
+        hasMore = e.detail.hasMore !== undefined ? e.detail.hasMore : true;
+    });
+
     window.addEventListener('scroll', handleScroll);
 }
