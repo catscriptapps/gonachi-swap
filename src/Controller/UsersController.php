@@ -17,8 +17,10 @@ class UsersController
 
     /**
      * Handle Delete
+     * @param string|null $id
+     * @return array
      */
-    public function delete($id): array
+    public function delete(?string $id): array
     {
         try {
             $rawId = (is_string($id) && !is_numeric($id)) ? IdEncoder::decode($id) : (int)$id;
@@ -42,6 +44,7 @@ class UsersController
     /**
      * Prepare data for the Users List Page
      * Optimized: Supports infinite scroll and search
+     * @return void
      */
     public function index(): void
     {
@@ -133,6 +136,9 @@ class UsersController
 
     /**
      * Render a single user for the Sidebar Search Dropdown
+     * @param User $user
+     * @param bool $isFollowing
+     * @return string
      */
     public static function renderSearchDropdownItem(User $user, bool $isFollowing = false): string
     {
@@ -149,6 +155,8 @@ class UsersController
 
     /**
      * Render individual table row HTML
+     * @param User $user
+     * @return string
      */
     public static function renderRow(\App\Models\User $user): string
     {
@@ -185,6 +193,8 @@ class UsersController
 
     /**
      * Handle Create or Update for Users
+     * @param array $data
+     * @return array
      */
     public function save(array $data): array
     {
@@ -237,11 +247,16 @@ class UsersController
                 }
             }
 
-            if ($isNew) $user->status_id = 0;
+            $appEnv = $_ENV['APP_ENV'] ?? '';
+            $isLocal = $appEnv === 'local';
+
+            if ($isNew) {
+                $user->status_id = $isLocal ? 1 : 0;
+            }
 
             $user->save();
 
-            if ($isNew) {
+            if ($isNew && !$isLocal) {
                 // 1. Generate a secure random token (32 bytes = 64 chars)
                 $token = bin2hex(random_bytes(32));
 
@@ -304,6 +319,8 @@ class UsersController
 
     /**
      * Update only User Types
+     * @param array $data
+     * @return array
      */
     public function updateTypes(array $data): array
     {
