@@ -25,6 +25,7 @@ $tablesToDrop = [
     'listing_types',
     'listing_conditions',
     'listing_categories',
+    'listing_responses',
 
     // Chats System
     'conversation_messages',
@@ -84,6 +85,9 @@ $messages = array_merge($messages, resetListingTypesTable());
 
 require_once __DIR__ . '/../../scripts/reset/listing-conditions.php';
 $messages = array_merge($messages, resetListingConditionsTable());
+
+require_once __DIR__ . '/../../scripts/reset/listing-responses.php';
+$messages = array_merge($messages, resetListingResponsesTable());
 
 /**
  * 4. CREATION PHASE - LEVEL 2: FUNCTIONAL SYSTEMS

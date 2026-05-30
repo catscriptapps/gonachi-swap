@@ -8,8 +8,7 @@ import { initListingActions } from '../utils/listings/listing-actions.js';
 import { initListingInfiniteScroll } from '../utils/listings/infinite-scroll-listings.js';
 import { initListingSearch } from '../utils/listings/search-listings.js';
 import { ListingCounter } from '../utils/listings/listing-counter-helper.js';
-//import { initRegisterNewUser } from '../utils/home/register-new-user.js';
-//import { initListingsConnect } from '../modals/listings-connect-modal.js';
+import { initListingsConnect } from '../modals/listings-connect-modal.js';
 
 /**
  * Gonachi Swap - Listings Page Orchestrator
@@ -33,6 +32,5 @@ export function init() {
     initListingSearch();           // Handles the sidebar checkboxes and search input
 
     // 5. Shared Community Components
-    //initRegisterNewUser();          // Handles registration from guest views
-    //initListingsConnect();         // Handles the contact/message modal logic
+    initListingsConnect();         // Handles the contact/message modal logic
 }

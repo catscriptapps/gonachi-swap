@@ -112,12 +112,12 @@ $statusId = (int)($item['status_id'] ?? 0);
 
         <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
             <span class="text-[10px] font-black text-primary-500 uppercase tracking-widest"><?= htmlspecialchars($categoryLabel) ?></span>
-            
+
             <div class="flex items-center gap-1.5">
                 <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-primary-50 dark:bg-primary-950/40 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-900/30 shadow-sm">
                     <?= htmlspecialchars($item['type_label'] ?? 'Standard') ?>
                 </span>
-                
+
                 <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-secondary-50 dark:bg-secondary-900/40 text-secondary-600 dark:text-secondary-400 border border-secondary-100 dark:border-secondary-800/30 shadow-sm">
                     <?= htmlspecialchars($item['condition_label'] ?? 'Used') ?>
                 </span>
@@ -210,7 +210,7 @@ $statusId = (int)($item['status_id'] ?? 0);
             <button type="button"
                 class="connect-listing-trigger w-full inline-flex justify-center items-center gap-2 px-4 py-3 bg-primary-500 hover:bg-secondary-950 text-secondary-950 hover:text-white font-black text-sm rounded-xl transition-all shadow-lg shadow-primary-500/20 active:scale-95"
                 <?php foreach ($listingDataAttrs as $key => $val): ?> data-<?= $key ?>="<?= htmlspecialchars((string)$val, ENT_QUOTES) ?>" <?php endforeach; ?>>
-                View Swap Details
+                Contact Swapper
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
