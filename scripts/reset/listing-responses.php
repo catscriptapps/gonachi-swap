@@ -1,5 +1,5 @@
 <?php
-// /scripts/reset/listings-responses.php
+// /scripts/reset/listing-responses.php
 
 declare(strict_types=1);
 
