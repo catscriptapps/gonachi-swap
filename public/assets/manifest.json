@@ -100,6 +100,15 @@
       "_table-pagination-count.min.js"
     ]
   },
+  "_view-listing.min.js": {
+    "file": "js/view-listing.min.js",
+    "name": "view-listing",
+    "imports": [
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_preview.min.js"
+    ]
+  },
   "resources/css/app.css": {
     "file": "css/app.min.css",
     "src": "resources/css/app.css",
@@ -243,10 +252,11 @@
       "_regions-component.min.js",
       "_form-validator.min.js",
       "_spinner-utils.min.js",
-      "_upload-modal.min.js",
+      "_view-listing.min.js",
+      "_delete-factory.min.js",
       "_toast.min.js",
-      "_preview.min.js",
-      "_delete-factory.min.js"
+      "_upload-modal.min.js",
+      "_preview.min.js"
     ]
   },
   "resources/js/pages/messages-page.js": {
@@ -277,7 +287,8 @@
       "_toast.min.js"
     ],
     "dynamicImports": [
-      "resources/js/utils/notifications/system.js"
+      "resources/js/utils/notifications/system.js",
+      "resources/js/utils/notifications/listings.js"
     ]
   },
   "resources/js/pages/profile-page.js": {
@@ -366,6 +377,18 @@
     "name": "faq-accordion",
     "src": "resources/js/utils/faqs/faq-accordion.js",
     "isDynamicEntry": true
+  },
+  "resources/js/utils/notifications/listings.js": {
+    "file": "js/listings.min.js",
+    "name": "listings",
+    "src": "resources/js/utils/notifications/listings.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_view-listing.min.js",
+      "_upload-modal.min.js",
+      "_toast.min.js",
+      "_preview.min.js"
+    ]
   },
   "resources/js/utils/notifications/system.js": {
     "file": "js/system.min.js",

@@ -3,9 +3,10 @@
 import { loadPartial } from '../spa-router.js';
 
 export const NotificationRouter = {
-    
+
     handlers: {
-        'SYSTEM':       () => import('./system.js'),
+        'SYSTEM': () => import('./system.js'),
+        'LISTING': () => import('./listings.js'), // Added Listing handler 🏷️
     },
 
     async handle(type, data) {
@@ -20,22 +21,23 @@ export const NotificationRouter = {
         if (getHandler) {
             try {
                 const module = await getHandler();
-                
+
                 // 2. Resolve handler dynamically 🧠
-                // Checks for Handlers, or default
-                const handler = 
-                    module.SystemHandler || 
+                // Checks for AdvertHandler, MentorHandler, SystemHandler, QuotationHandler, ListingHandler, or default
+                const handler =
+                    module.SystemHandler ||
+                    module.ListingHandler ||
                     module.default;
-                
+
                 if (handler && typeof handler.process === 'function') {
                     await handler.process(data);
-                    return; 
+                    return;
                 }
             } catch (e) {
                 console.error("Router Error:", e);
             }
         }
-        
+
         // 3. Fallback for simple link-based notifications
         this.fallback(element);
     },
@@ -44,33 +46,33 @@ export const NotificationRouter = {
         if (!noteId || element.dataset.isRead === '1') return;
 
         const baseUrl = window.APP_CONFIG?.baseUrl || '/';
-        
+
         fetch(`${baseUrl}api/notifications-read`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ notification_id: noteId })
         })
-        .then(res => res.json())
-        .then(result => {
-            if (result.success) {
-                element.dataset.isRead = '1';
+            .then(res => res.json())
+            .then(result => {
+                if (result.success) {
+                    element.dataset.isRead = '1';
 
-                const card = element.closest('.group');
-                if (card) {
-                    card.classList.remove('border-l-primary-500');
-                    card.classList.add('border-l-transparent', 'opacity-75');
+                    const card = element.closest('.group');
+                    if (card) {
+                        card.classList.remove('border-l-primary-500');
+                        card.classList.add('border-l-transparent', 'opacity-75');
+                    }
+
+                    const headerCountSpan = document.querySelector('h3 span.text-primary-500');
+                    if (headerCountSpan) {
+                        this.decrementCount(headerCountSpan, true);
+                    }
+
+                    const type = element.dataset.type;
+                    this.updateSidebarBadges(type);
                 }
-
-                const headerCountSpan = document.querySelector('h3 span.text-primary-500');
-                if (headerCountSpan) {
-                    this.decrementCount(headerCountSpan, true);
-                }
-
-                const type = element.dataset.type;
-                this.updateSidebarBadges(type);
-            }
-        })
-        .catch(err => console.error('Router: MarkRead Error:', err));
+            })
+            .catch(err => console.error('Router: MarkRead Error:', err));
     },
 
     decrementCount(element, isHeader = false) {
@@ -90,10 +92,10 @@ export const NotificationRouter = {
         if (allAlertsBadge) this.decrementCount(allAlertsBadge);
 
         const typeMap = {
-            'LISTING':      'Listings',
-            'SYSTEM':       'System'
+            'LISTING': 'Listings',
+            'SYSTEM': 'System'
         };
-        
+
         const targetLabel = typeMap[type.toUpperCase()];
         if (targetLabel) {
             const sidebarButtons = document.querySelectorAll('aside button');
