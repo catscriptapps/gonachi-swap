@@ -22,6 +22,7 @@ if (AuthService::isLoggedIn()) {
 
     $listingCards = $GLOBALS['listingCards'] ?? '';
     $totalCount   = $GLOBALS['totalCount'] ?? 0;
+    $allTypes     = $GLOBALS['listingTypes'] ?? [];
 ?>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 font-sans" x-data="{ showFilters: false }">
@@ -40,6 +41,33 @@ if (AuthService::isLoggedIn()) {
 
         <div class="w-full">
             <main>
+
+                <!-- Listing Type Filters -->
+                <div class="mb-8" data-aos="fade-down">
+                    <div class="flex items-center gap-3 overflow-x-auto pb-3 w-full no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
+                        <button class="listing-type-btn px-6 py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all duration-300 border-2 active:scale-95 flex items-center gap-2 shrink-0 border-primary-500 bg-primary-500 text-secondary-950 shadow-lg shadow-primary-500/20 active" data-type-id="all">
+                            <span>All Listings</span>
+                        </button>
+                        <?php foreach ($allTypes as $type): ?>
+                            <button class="listing-type-btn px-6 py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all duration-300 border-2 border-gray-100 dark:border-white/5 bg-white dark:bg-secondary-950 text-gray-500 dark:text-gray-400 hover:border-primary-500 hover:text-primary-500 active:scale-95 flex items-center gap-2 shrink-0" data-type-id="<?= $type['type_id'] ?>">
+                                <?php if ((int)$type['type_id'] === 1): ?>
+                                    <!-- Swap Icon -->
+                                    <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                                <?php elseif ((int)$type['type_id'] === 2): ?>
+                                    <!-- Sale Icon -->
+                                    <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <?php elseif ((int)$type['type_id'] === 3): ?>
+                                    <!-- Gift Icon -->
+                                    <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+                                <?php else: ?>
+                                    <!-- Default Tag Icon -->
+                                    <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                <?php endif; ?>
+                                <span><?= htmlspecialchars($type['type_name']) ?>s</span>
+                            </button>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
 
                 <!-- Action Bar: Search + Responsive Buttons -->
                 <div class="flex flex-col md:flex-row gap-4 mb-10" data-aos="fade-up">
@@ -141,9 +169,18 @@ if (AuthService::isLoggedIn()) {
                         <div class="animate-spin inline-block w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full hidden"></div>
                     </div>
                 </div>
-            </main>
-        </div>
-    </div><?php
+    </div>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<?php
         } else {
             include __DIR__ . '/../components/listings/guest-landing.php';
         }

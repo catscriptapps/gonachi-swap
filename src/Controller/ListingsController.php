@@ -7,6 +7,7 @@ namespace Src\Controller;
 
 use App\Models\Listing;
 use App\Models\ListingCategory;
+use App\Models\ListingType;
 use App\Models\Country;
 use App\Utils\IdEncoder;
 use App\Traits\RecentActivityLogger;
@@ -149,6 +150,9 @@ class ListingsController
         $offset = ($page - 1) * $perPage;
         $userId = (int)($_SESSION['user_id'] ?? 0);
 
+        $typeId = $_GET['type_id'] ?? '';
+        $categories = $_GET['categories'] ?? [];
+
         $builder = Listing::with([
             'user.country',
             'user.region',
@@ -169,6 +173,14 @@ class ListingsController
             });
         }
 
+        if (!empty($typeId) && $typeId !== 'all') {
+            $builder->where('type_id', (int)$typeId);
+        }
+
+        if (!empty($categories) && is_array($categories)) {
+            $builder->whereIn('category_id', array_map('intval', $categories));
+        }
+
         $totalFiltered = $builder->count();
         $listings = $builder->orderBy('created_at', 'desc')
             ->offset($offset)
@@ -180,8 +192,8 @@ class ListingsController
             $html .= self::renderCard($listing);
         }
 
-        // AJAX response for search/pagination
-        if (isset($_GET['page']) || isset($_GET['q'])) {
+        // AJAX response for search/pagination/filtering
+        if (isset($_GET['page']) || isset($_GET['q']) || isset($_GET['type_id']) || isset($_GET['categories'])) {
             header('Content-Type: application/json');
             echo json_encode([
                 'success' => true,
@@ -198,6 +210,7 @@ class ListingsController
         // Standard Page Load globals
         $GLOBALS['listingCategories'] = ListingCategory::orderBy('category_name', 'asc')->get()->toArray();
         $GLOBALS['countries']         = Country::orderBy('country', 'asc')->get()->toArray();
+        $GLOBALS['listingTypes']      = ListingType::all()->toArray();
         $GLOBALS['listingCards']      = $html;
         $GLOBALS['title']             = $all ? "Browse Swaps" : "My Listings";
         $GLOBALS['totalCount']        = $totalFiltered;

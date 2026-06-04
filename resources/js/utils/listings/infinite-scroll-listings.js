@@ -23,11 +23,37 @@ export function initListingInfiniteScroll() {
         currentPage++;
 
         const searchInput = document.getElementById('listing-search-input');
-        const query = searchInput ? searchInput.value : '';
+        const query = searchInput ? searchInput.value.trim() : '';
+
+        // Gather categories
+        const categoryInputs = document.querySelectorAll('input[name="category[]"]:checked');
+        const categories = [];
+        categoryInputs.forEach(input => {
+            categories.push(input.value);
+        });
+
+        // Gather type
+        const activeTypeBtn = document.querySelector('.listing-type-btn.active');
+        const typeId = activeTypeBtn ? activeTypeBtn.dataset.typeId : 'all';
 
         try {
-            // Using your existing API endpoint with all=true for marketplace
-            const response = await fetch(`${window.APP_CONFIG?.baseUrl}api/listings?page=${currentPage}&q=${encodeURIComponent(query)}&all=true`);
+            const baseUrl = window.APP_CONFIG?.baseUrl || '/';
+            
+            // Construct query parameters
+            let url = `${baseUrl}api/listings?page=${currentPage}&all=true`;
+            if (query) {
+                url += `&q=${encodeURIComponent(query)}`;
+            }
+            if (typeId && typeId !== 'all') {
+                url += `&type_id=${encodeURIComponent(typeId)}`;
+            }
+            if (categories.length > 0) {
+                categories.forEach(catId => {
+                    url += `&categories[]=${encodeURIComponent(catId)}`;
+                });
+            }
+
+            const response = await fetch(url);
             const result = await response.json();
 
             if (result.success && result.data && result.data.length > 0) {
